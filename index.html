@@ -45,13 +45,11 @@
   [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:"Instrument Sans",Tahoma,sans-serif}
   p{margin:0}
   a{color:inherit}
-  a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--ember); outline-offset:3px; border-radius:4px}
+  a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ember); outline-offset:3px; border-radius:4px}
   .saltar{position:absolute; left:-9999px; background:var(--ember); color:#fff; padding:10px 16px; border-radius:8px}
   .saltar:focus{left:12px; top:12px; z-index:60}
 
-  /* Cintillo de campaña */
   .cintillo{background:var(--ember); color:#fff; text-align:center; padding:9px 16px; font-size:15px; font-weight:600; line-height:1.4}
-  .cintillo a{color:#fff; text-decoration:underline}
   .cintillo .reloj{display:inline-block; background:rgba(0,0,0,.22); border-radius:6px; padding:1px 8px; margin-left:6px; font-variant-numeric:tabular-nums}
 
   .top{position:sticky; top:0; z-index:40; background:var(--header); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
@@ -72,10 +70,10 @@
   #menu.open{display:block}
   #menu a{display:block; padding:13px 2px; text-decoration:none; font-size:17px; border-bottom:1px solid var(--line)}
   #menu a:last-child{border-bottom:0; color:var(--ember); font-weight:600}
-  @media (min-width:860px){
+  @media (min-width:900px){
     .burger{display:none}
-    #menu{display:flex !important; gap:20px; padding:0; align-items:center}
-    #menu a{border-bottom:0; padding:0; font-size:15px; color:var(--ink-soft)}
+    #menu{display:flex !important; gap:18px; padding:0; align-items:center}
+    #menu a{border-bottom:0; padding:0; font-size:14.5px; color:var(--ink-soft)}
     #menu a:hover{color:var(--ink)}
   }
 
@@ -84,9 +82,9 @@
   .hero p.lead{margin-top:18px; font-size:20px; color:var(--on-iron-soft); max-width:48ch}
   .cta{display:inline-block; margin-top:26px; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:15px 24px; border-radius:8px; font-size:17px}
   .cta:hover{filter:brightness(1.07)}
+  .cta.hueco{background:transparent; border:1px solid #454C53; color:var(--on-iron); margin-inline-start:8px}
   .hero .meta{margin-top:14px; font-size:15px; color:var(--on-iron-soft)}
 
-  /* Cartel de promoción */
   .cartel{margin-top:30px; border:2px solid var(--ember); border-radius:16px; overflow:hidden; background:#171C21}
   .cartel .banda{background:var(--ember); color:#fff; padding:10px 18px; font-weight:600; font-size:14px; display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center}
   .cartel .cuerpo{padding:22px 18px 20px; text-align:center}
@@ -113,6 +111,18 @@
   .fuga h3{font-size:20px; margin-bottom:6px}
   .fuga p{color:var(--ink-soft); font-size:15px}
 
+  /* Calculadora */
+  .calc{margin-top:26px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:24px}
+  .calc .campos{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .calc label{display:block; font-size:14.5px; font-weight:600; margin-bottom:8px}
+  .calc label b{color:var(--ember); font-variant-numeric:tabular-nums}
+  .calc input[type=range]{width:100%; accent-color:var(--ember)}
+  .calc .resultado{margin-top:22px; padding-top:20px; border-top:1px solid var(--line); text-align:center}
+  .calc .cifra{font-family:"Fraunces",Georgia,serif; font-size:clamp(34px,8vw,52px); color:var(--ember); line-height:1.05; font-variant-numeric:tabular-nums}
+  .calc .leyenda{margin-top:6px; font-size:15px; color:var(--ink-soft)}
+  .calc .comparo{margin-top:16px; font-size:15.5px; background:rgba(255,87,34,.08); border:1px solid var(--ember); border-radius:10px; padding:13px 16px}
+  .calc .nota{margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+
   .mitades{margin-top:28px; display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
   .mitad{background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px}
   .mitad h3{font-size:23px}
@@ -125,6 +135,23 @@
   .charla .cliente{background:var(--bg); border:1px solid var(--line); border-bottom-right-radius:5px; margin-inline-start:auto}
   .charla .agente{background:var(--iron); color:var(--on-iron); border-bottom-left-radius:5px}
   .charla .pie{margin-top:12px; font-size:14px; color:var(--ink-soft)}
+  .probar{margin-top:18px; background:var(--iron); color:var(--on-iron); border-radius:14px; padding:22px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between}
+  .probar h3{font-size:20px; color:var(--on-iron)}
+  .probar p{color:var(--on-iron-soft); font-size:15px; margin-top:4px; max-width:46ch}
+  .probar a{background:var(--spark); color:#20262B; text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap}
+
+  /* Caso real */
+  .caso{margin-top:26px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:24px}
+  .caso .etiqueta{display:inline-block; background:var(--iron); color:var(--on-iron); font-size:12px; font-weight:600; padding:4px 11px; border-radius:999px}
+  .caso h3{font-size:23px; margin-top:12px}
+  .caso .antes{margin-top:18px; display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .caso .col{border:1px solid var(--line); border-radius:12px; padding:16px; background:var(--bg)}
+  .caso .col b{display:block; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin-bottom:8px}
+  .caso .col.despues{border-color:var(--ember)}
+  .caso .col ul{margin:0; padding-inline-start:18px; color:var(--ink-soft); font-size:15px}
+  .caso .col li{margin-bottom:5px}
+  .caso .pie{margin-top:16px; font-size:14.5px; color:var(--ink-soft)}
+  .caso .pie a{color:var(--ember); font-weight:600}
 
   ol.steps{list-style:none; padding:0; margin:26px 0 0; border-top:1px solid var(--line)}
   ol.steps li{display:grid; grid-template-columns:62px 1fr; gap:14px; padding:19px 0; border-bottom:1px solid var(--line)}
@@ -166,7 +193,6 @@
   .pago .monto small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft)}
   .pagar{display:inline-block; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap; text-align:center}
   .pagar.oro{background:var(--spark); color:#20262B}
-  .pagar.suave{background:transparent; color:var(--ink); border:1px solid var(--line)}
   .pagar:hover{filter:brightness(1.07)}
   @media (max-width:620px){.pago{grid-template-columns:1fr}}
   .grupo{margin-top:30px}
@@ -174,11 +200,25 @@
   .grupo > p{color:var(--ink-soft); font-size:15px}
   .segura{margin-top:20px; font-size:14px; color:var(--ink-soft)}
 
+  /* Formulario */
+  .form{margin-top:24px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:24px}
+  .form .campos{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .form label{display:block; font-size:14.5px; font-weight:600; margin-bottom:6px}
+  .form input,.form textarea,.form select{width:100%; background:var(--bg); color:inherit; border:1px solid var(--line); border-radius:9px; padding:12px; font:16px/1.4 inherit}
+  .form textarea{min-height:92px; resize:vertical}
+  .form .ancho{grid-column:1/-1}
+  .form .enviar{margin-top:16px; background:var(--ember); color:#fff; border:0; border-radius:9px; padding:14px 24px; font:600 16px inherit; cursor:pointer}
+  .form .enviar[disabled]{opacity:.55; cursor:default}
+  .form .aviso{margin-top:12px; font-size:13.5px; color:var(--ink-soft)}
+  .form .estado{margin-top:14px; font-size:15px; font-weight:600}
+  .form .trampa{position:absolute; left:-9999px}
+
   details{border-top:1px solid var(--line); padding:16px 0}
   details:last-of-type{border-bottom:1px solid var(--line)}
   summary{cursor:pointer; font-weight:600; list-style:none}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+"; float:inline-end; color:var(--ember); font-weight:600}
+  summary::after{content:"+"; float:right; color:var(--ember); font-weight:600}
+  [dir="rtl"] summary::after{float:left}
   details[open] summary::after{content:"−"}
   details p{margin-top:10px; color:var(--ink-soft); max-width:62ch}
 
@@ -225,6 +265,7 @@
     <nav id="menu" aria-label="Principal">
       <a href="#problema" data-i18n="nav1">El problema</a>
       <a href="#solucion" data-i18n="nav2">Qué entregamos</a>
+      <a href="#caso" data-i18n="nav7">Caso real</a>
       <a href="#negocios" data-i18n="nav3">Para quién</a>
       <a href="#proceso" data-i18n="nav4">Cómo funciona</a>
       <a href="#preguntas" data-i18n="nav5">Preguntas</a>
@@ -238,6 +279,7 @@
     <h1 data-i18n="h1">Una página que vende. Un agente que atiende.</h1>
     <p class="lead" data-i18n="lead">Su negocio pierde dinero por dos puertas: la gente que no encuentra dónde pagarle y la que escribe y no recibe respuesta. Cerramos las dos, para cualquier giro, con precio fijo y fecha de entrega.</p>
     <a class="cta" id="cta1" href="https://wa.me/523223102049" data-i18n="cta1">Hablemos de mi negocio</a>
+    <a class="cta hueco" href="/demo.html" data-i18n="ctaDemo">Probar el agente</a>
     <p class="meta" data-i18n="meta">Respondemos el mismo día. Sin compromiso.</p>
 
     <div class="cartel">
@@ -269,6 +311,31 @@
       <div class="fuga">
         <h3 data-i18n="f2t">El cliente escribe y nadie contesta</h3>
         <p data-i18n="f2p">Le escriben a las once de la noche, en domingo, o mientras usted atiende a otro. Quien no recibe respuesta en minutos le escribe al siguiente. Esa venta ya no vuelve.</p>
+      </div>
+    </div>
+
+    <div class="calc">
+      <h3 data-i18n="calcT">¿Cuánto le cuesta esa fuga al año?</h3>
+      <p class="sub" data-i18n="calcS">Mueva los tres controles con los números de su negocio. La cuenta es suya, no nuestra.</p>
+      <div class="campos">
+        <div>
+          <label for="cMsg"><span data-i18n="calcL1">Mensajes de clientes al día</span>: <b id="vMsg">12</b></label>
+          <input type="range" id="cMsg" min="1" max="80" value="12">
+        </div>
+        <div>
+          <label for="cTicket"><span data-i18n="calcL2">Lo que deja un cliente en promedio</span>: <b id="vTicket">$850</b></label>
+          <input type="range" id="cTicket" min="100" max="20000" step="50" value="850">
+        </div>
+        <div>
+          <label for="cPerd"><span data-i18n="calcL3">De cada 10, cuántos se le enfrían</span>: <b id="vPerd">3</b></label>
+          <input type="range" id="cPerd" min="1" max="8" value="3">
+        </div>
+      </div>
+      <div class="resultado">
+        <div class="cifra" id="cAnual">$0</div>
+        <p class="leyenda" data-i18n="calcLey">es lo que se le escapa al año por no cobrar y no contestar a tiempo</p>
+        <p class="comparo" id="cComparo"></p>
+        <p class="nota" data-i18n="calcNota">Cálculo conservador: asume que solo una parte de esos clientes fríos habría comprado. Sirve para dimensionar, no para presumir.</p>
       </div>
     </div>
   </section>
@@ -309,6 +376,42 @@
       <div class="b cliente" data-i18n="ch3">El de las 10, por favor.</div>
       <div class="b agente" data-i18n="ch4">Listo. ¿Me confirma su nombre y teléfono? Le mando el recordatorio y la liga para dejarlo pagado si prefiere.</div>
       <p class="pie" data-i18n="ch5">Una conversación de las 11 de la noche de un sábado, atendida sin que usted tocara el teléfono.</p>
+    </div>
+
+    <div class="probar">
+      <div>
+        <h3 data-i18n="probarT">No nos crea: platíquele</h3>
+        <p data-i18n="probarP">Tenemos tres agentes de demostración listos — un consultorio, una taquería y un taller mecánico. Pregúnteles lo que le preguntarían a usted.</p>
+      </div>
+      <a href="/demo.html" data-i18n="probarB">Probar un agente</a>
+    </div>
+  </section>
+
+  <section id="caso">
+    <h2 data-i18n="casoH">Un caso real</h2>
+    <p class="sub" data-i18n="casoS">El primer cliente de Forja Labs es un instituto de formación con alumnos en varios países.</p>
+    <div class="caso">
+      <span class="etiqueta" data-i18n="casoE">CLIENTE · EDUCACIÓN</span>
+      <h3 data-i18n="casoT">INISCH — Instituto Internacional del Sistema Código Holográfico</h3>
+      <div class="antes">
+        <div class="col">
+          <b data-i18n="casoAntesL">Antes</b>
+          <ul>
+            <li data-i18n="casoA1">Inscripciones por mensaje y transferencia manual</li>
+            <li data-i18n="casoA2">Sin un lugar propio donde mostrar los programas</li>
+            <li data-i18n="casoA3">Material de los alumnos repartido entre carpetas y chats</li>
+          </ul>
+        </div>
+        <div class="col despues">
+          <b data-i18n="casoDespuesL">Después</b>
+          <ul>
+            <li data-i18n="casoD1">Sitio propio con los programas y el libro de la fundadora</li>
+            <li data-i18n="casoD2">Cobro en línea con tarjeta, a la cuenta del instituto</li>
+            <li data-i18n="casoD3">Plataforma de alumnos con acceso privado al material</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie" data-i18n="casoPie">Mismo equipo, mismas herramientas y el mismo proceso de cinco pasos que usaríamos con su negocio.</p>
     </div>
   </section>
 
@@ -367,6 +470,21 @@
       <div class="acc">
         <a class="pri" href="https://buy.stripe.com/9B628sa7S3v23EN3KlgEg0S" data-i18n="destB1">Pagar de contado $12,600</a>
         <a class="sec" href="https://buy.stripe.com/7sY14ofsc6Heb7f5StgEg0I" data-i18n="destB2">Pagar anticipo $7,000</a>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <h3 data-i18n="gr0t">Cobro Express — para empezar en chico</h3>
+      <p data-i18n="gr0p">Una sola pantalla con sus servicios, botón de pago y botón de WhatsApp. Entrega en 5 días. Si después crece al paquete completo, se le descuenta lo que ya pagó.</p>
+      <div class="pagos">
+        <div class="pago destaca">
+          <div><strong data-i18n="contadoT0">Pago de contado</strong><p data-i18n="contadoP0">10 % extra de descuento y prioridad en la fila.</p><div class="monto"><span class="tach">$6,000</span>$2,700 <small>MXN</small></div></div>
+          <a class="pagar oro" href="https://buy.stripe.com/8x2bJ2gwg3v26QZbcNgEg0T" data-i18n="pagarContado0">Pagar de contado</a>
+        </div>
+        <div class="pago">
+          <div><strong data-i18n="anticipoT0">Anticipo del 50 %</strong><p data-i18n="anticipoP0">El resto se paga al entregar.</p><div class="monto">$1,500 <small data-i18n="de3000">de $3,000 en total</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/5kQbJ2bbW7Ligrz3KlgEg0U" data-i18n="pagarAnticipo0">Pagar anticipo</a>
+        </div>
       </div>
     </div>
 
@@ -432,6 +550,35 @@
       <details><summary data-i18n="q9">¿Emiten factura?</summary><p data-i18n="a9">Sí. Indíquelo al contratar y le pedimos sus datos fiscales.</p></details>
     </div>
   </section>
+
+  <section id="formulario">
+    <h2 data-i18n="formT">¿Prefiere que le escribamos nosotros?</h2>
+    <p class="sub" data-i18n="formS">Déjenos cómo contactarlo y le respondemos el mismo día. Sin llamadas sorpresa ni insistencia.</p>
+    <form class="form" id="formLead" autocomplete="on">
+      <div class="campos">
+        <div>
+          <label for="fNombre" data-i18n="formNombre">Su nombre</label>
+          <input id="fNombre" name="nombre" type="text" required maxlength="80" autocomplete="name">
+        </div>
+        <div>
+          <label for="fContacto" data-i18n="formContacto">WhatsApp o correo</label>
+          <input id="fContacto" name="contacto" type="text" required maxlength="80" autocomplete="tel">
+        </div>
+        <div>
+          <label for="fGiro" data-i18n="formGiro">¿Qué tipo de negocio tiene?</label>
+          <input id="fGiro" name="giro" type="text" maxlength="60" placeholder="Consultorio, taller, tienda…">
+        </div>
+        <div class="ancho">
+          <label for="fMensaje" data-i18n="formMensaje">¿Qué se le atora hoy? (opcional)</label>
+          <textarea id="fMensaje" name="mensaje" maxlength="600"></textarea>
+        </div>
+      </div>
+      <input class="trampa" type="text" name="apellido2" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="enviar" type="submit" id="fEnviar" data-i18n="formBoton">Enviar mis datos</button>
+      <p class="estado" id="fEstado" role="status"></p>
+      <p class="aviso" data-i18n="formAviso">Sus datos solo se usan para responderle. No los vendemos ni los compartimos. Puede pedir que los borremos cuando quiera.</p>
+    </form>
+  </section>
 </div>
 
 <div class="final" id="contacto">
@@ -462,11 +609,73 @@
     menu.classList.toggle('open', !abierto);
   });
   menu.addEventListener('click', function(e){
-    if (e.target.tagName === 'A' && window.innerWidth < 860) {
+    if (e.target.tagName === 'A' && window.innerWidth < 900) {
       menu.classList.remove('open');
       burger.setAttribute('aria-expanded','false');
     }
   });
+
+  /* Calculadora de fuga */
+  (function(){
+    var msg = document.getElementById('cMsg'), tic = document.getElementById('cTicket'), per = document.getElementById('cPerd');
+    var vMsg = document.getElementById('vMsg'), vTic = document.getElementById('vTicket'), vPer = document.getElementById('vPerd');
+    var anual = document.getElementById('cAnual'), comparo = document.getElementById('cComparo');
+    function dinero(n){
+      var loc = document.documentElement.lang || 'es-MX';
+      try { return new Intl.NumberFormat(loc === 'es' ? 'es-MX' : loc, { style:'currency', currency:'MXN', maximumFractionDigits:0 }).format(n); }
+      catch(e){ return '$' + Math.round(n).toLocaleString('es-MX'); }
+    }
+    function calcular(){
+      var m = +msg.value, t = +tic.value, p = +per.value;
+      vMsg.textContent = m; vTic.textContent = dinero(t); vPer.textContent = p;
+      // De los que se enfrian, asumimos que solo 1 de cada 3 habria comprado
+      var perdidosDia = m * (p / 10) / 3;
+      var alAnio = perdidosDia * t * 313;
+      anual.textContent = dinero(alAnio);
+      var dic = window.FORJA_DIC || {};
+      var plantilla = dic.calcComparo || 'Con eso pagaría el paquete completo {veces} veces — y le sobraría.';
+      var veces = alAnio / 14000;
+      if (veces < 1) {
+        comparo.textContent = dic.calcPoco || 'Todavía no alcanza para el paquete completo, pero sí para Cobro Express: $2,700 de contado.';
+      } else {
+        comparo.textContent = plantilla.replace('{veces}', veces < 10 ? veces.toFixed(1) : Math.round(veces));
+      }
+    }
+    [msg,tic,per].forEach(function(e){ e.addEventListener('input', calcular); });
+    window.FORJA_CALC = calcular;
+    calcular();
+  })();
+
+  /* Formulario de contacto */
+  (function(){
+    var f = document.getElementById('formLead'), est = document.getElementById('fEstado'), btn = document.getElementById('fEnviar');
+    f.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var dic = window.FORJA_DIC || {};
+      var datos = {
+        nombre: f.nombre.value, contacto: f.contacto.value, giro: f.giro.value,
+        mensaje: f.mensaje.value, apellido2: f.apellido2.value,
+        origen: 'formulario', idioma: document.documentElement.lang || 'es'
+      };
+      if (!datos.nombre.trim() || !datos.contacto.trim()) return;
+      btn.disabled = true;
+      est.textContent = dic.formEnviando || 'Enviando…';
+      fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(datos) })
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (d && d.ok) {
+            est.style.color = 'var(--ember)';
+            est.textContent = dic.formOk || 'Recibido. Le escribimos hoy mismo.';
+            f.reset();
+          } else { throw new Error('no'); }
+        })
+        .catch(function(){
+          est.style.color = 'var(--ink-soft)';
+          est.innerHTML = (dic.formError || 'No se pudo enviar. Escríbanos por WhatsApp:') + ' <a href="' + url + '">322 310 2049</a>';
+        })
+        .finally(function(){ btn.disabled = false; });
+    });
+  })();
 </script>
 <script src="/idiomas.js" defer></script>
 <script src="/agente.js" defer></script>
