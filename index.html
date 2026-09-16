@@ -71,6 +71,8 @@
   summary{cursor:pointer; font-weight:600; list-style:none}
   summary::-webkit-details-marker{display:none}
   details p{margin-top:10px; color:var(--ink-soft)}
+  .contacto{margin-top:22px; font-size:16px; color:var(--on-iron-soft)}
+  .contacto a{color:var(--on-iron)}
   footer{padding:36px 0 48px; color:var(--ink-soft); font-size:15px}
   footer a{text-decoration:none}
   .final{background:var(--iron); color:var(--on-iron); padding:56px 0}
@@ -93,7 +95,7 @@
   <div class="wrap">
     <h1>Su negocio, cobrando en línea en 10 días.</h1>
     <p class="lead">Página, pagos y agenda listos para recibir clientes. Precio fijo, sin sorpresas y sin depender de un programador después.</p>
-    <a class="cta" id="cta1" href="#contacto">Quiero cobrar en línea</a>
+    <a class="cta" id="cta1" href="https://wa.me/523223102049">Quiero cobrar en línea</a>
     <p class="meta">Respondemos el mismo día. Sin compromiso.</p>
   </div>
 </div>
@@ -160,7 +162,8 @@
   <div class="wrap">
     <h2>Cuénteme de su negocio.</h2>
     <p>Un mensaje basta. Le respondo el mismo día con una propuesta clara.</p>
-    <a class="cta" id="cta2" href="#">Escribir por WhatsApp</a>
+    <a class="cta" id="cta2" href="https://wa.me/523223102049">Escribir por WhatsApp</a>
+    <p class="contacto">O por correo: <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · WhatsApp 322 310 2049</p>
   </div>
 </div>
 
@@ -169,17 +172,11 @@
 </div>
 
 <script>
-  // Sustituir por el número real de WhatsApp (formato internacional sin '+', ej. 521XXXXXXXXXX)
-  var WHATSAPP = "";
+  var WHATSAPP = "523223102049";
   var texto = "Hola, vi la página de Forja Labs y me interesa el paquete de sitio con pagos. Mi negocio es: ";
-  var b1 = document.getElementById('cta1'), b2 = document.getElementById('cta2');
-  if (WHATSAPP) {
-    var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
-    b1.href = url; b2.href = url;
-  } else {
-    b2.href = "mailto:hola@forjalabs.org?subject=" + encodeURIComponent("Quiero una página que cobre") + "&body=" + encodeURIComponent(texto);
-    b2.textContent = "Escribir un correo";
-  }
+  var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
+  document.getElementById('cta1').href = url;
+  document.getElementById('cta2').href = url;
 </script>
 </body>
 </html>
