@@ -16,79 +16,131 @@
 <style>
   :root{
     --bg:#EEEFF1; --paper:#F8F8F7; --iron:#22272B; --ink:#15191D; --ink-soft:#586069; --line:#D3D7DC;
-    --ember:#D4571E; --ember-ink:#FFFFFF; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9;
+    --ember:#D4571E; --ember-ink:#FFFFFF; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9; --header:rgba(238,239,241,.92);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#EDEFF1; --ink-soft:#A3ABB3; --line:#2C333A;
-      --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9;
+      --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
     }
   }
   :root[data-theme="dark"]{
     --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#EDEFF1; --ink-soft:#A3ABB3; --line:#2C333A;
-    --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9;
+    --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
   }
   *{box-sizing:border-box}
   html,body{margin:0}
+  html{scroll-behavior:smooth}
   body{background:var(--bg); color:var(--ink); font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased}
   .wrap{max-width:880px; margin:0 auto; padding:0 22px}
   h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.015em; line-height:1.1; margin:0}
   p{margin:0}
   a{color:inherit}
-  header{padding:22px 0; display:flex; align-items:center; justify-content:space-between}
+
+  /* Cabecera con menú */
+  .top{position:sticky; top:0; z-index:40; background:var(--header); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
   .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; text-decoration:none}
   .brand svg{width:26px; height:26px}
   .brand svg path{fill:var(--ember)}
-  header a.small{font-size:15px; color:var(--ink-soft); text-decoration:none}
-  .hero{background:var(--iron); color:var(--on-iron); padding:64px 0 60px}
+  .burger{width:44px; height:44px; display:grid; place-items:center; background:none; border:1px solid var(--line); border-radius:10px; cursor:pointer; color:var(--ink)}
+  .burger span{display:block; width:20px; height:2px; background:currentColor; position:relative; transition:transform .18s ease, background .18s ease}
+  .burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:currentColor; transition:transform .18s ease, top .18s ease}
+  .burger span::before{top:-6px}
+  .burger span::after{top:6px}
+  .burger[aria-expanded="true"] span{background:transparent}
+  .burger[aria-expanded="true"] span::before{top:0; transform:rotate(45deg)}
+  .burger[aria-expanded="true"] span::after{top:0; transform:rotate(-45deg)}
+  #menu{display:none; padding:6px 0 16px}
+  #menu.open{display:block}
+  #menu a{display:block; padding:13px 2px; text-decoration:none; font-size:17px; border-bottom:1px solid var(--line)}
+  #menu a:last-child{border-bottom:0; color:var(--ember); font-weight:600}
+  @media (min-width:760px){
+    .burger{display:none}
+    #menu{display:flex !important; gap:24px; padding:0; align-items:center}
+    #menu a{border-bottom:0; padding:0; font-size:15px; color:var(--ink-soft)}
+    #menu a:hover{color:var(--ink)}
+  }
+
+  .hero{background:var(--iron); color:var(--on-iron); padding:60px 0 56px}
   .hero h1{font-size:clamp(38px, 7vw, 64px); max-width:14ch}
   .hero p.lead{margin-top:22px; font-size:20px; color:var(--on-iron-soft); max-width:40ch}
   .cta{display:inline-block; margin-top:32px; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:15px 24px; border-radius:8px; font-size:17px}
   .cta:hover{filter:brightness(1.06)}
   .hero .meta{margin-top:18px; font-size:15px; color:var(--on-iron-soft)}
-  section{padding:56px 0}
+
+  section{padding:56px 0; scroll-margin-top:70px}
   section + section{border-top:1px solid var(--line)}
   h2{font-size:clamp(28px, 4.5vw, 38px); max-width:22ch}
   .sub{margin-top:10px; color:var(--ink-soft); max-width:56ch}
+
   .incl{margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px}
   .incl div{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:18px}
   .incl strong{display:block; font-weight:600; margin-bottom:4px}
   .incl span{color:var(--ink-soft); font-size:15px}
+
   ol.steps{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:0; border-top:1px solid var(--line)}
   ol.steps li{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:20px 0; border-bottom:1px solid var(--line)}
   ol.steps .n{font-family:"Fraunces",Georgia,serif; font-size:34px; color:var(--ember); line-height:1}
   ol.steps strong{display:block; font-weight:600}
   ol.steps span{color:var(--ink-soft)}
+
   .price{margin-top:28px; background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:28px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center}
   .price .amt{font-family:"Fraunces",Georgia,serif; font-size:46px; line-height:1}
   .price .amt small{font-family:"Instrument Sans",sans-serif; font-size:15px; color:var(--ink-soft); display:block; margin-top:6px}
   .price ul{margin:0; padding-left:18px; color:var(--ink-soft)}
   @media (max-width:600px){.price{grid-template-columns:1fr}}
+
+  /* Contratar y pagar */
+  .pagos{margin-top:28px; display:grid; gap:14px}
+  .pago{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:22px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
+  .pago h3{font-size:21px}
+  .pago p{color:var(--ink-soft); font-size:15px; margin-top:4px; max-width:42ch}
+  .pago .monto{font-family:"Fraunces",Georgia,serif; font-size:26px; margin-top:8px}
+  .pago .monto small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft)}
+  .pagar{display:inline-block; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap}
+  .pagar.suave{background:transparent; color:var(--ink); border:1px solid var(--line)}
+  .pagar:hover{filter:brightness(1.06)}
+  @media (max-width:600px){.pago{grid-template-columns:1fr} .pagar{text-align:center}}
+  .segura{margin-top:16px; font-size:14px; color:var(--ink-soft)}
+
   .who{margin-top:24px; display:flex; flex-wrap:wrap; gap:8px}
   .who span{background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:15px}
+
   details{border-top:1px solid var(--line); padding:16px 0}
   details:last-of-type{border-bottom:1px solid var(--line)}
   summary{cursor:pointer; font-weight:600; list-style:none}
   summary::-webkit-details-marker{display:none}
   details p{margin-top:10px; color:var(--ink-soft)}
+
   .contacto{margin-top:22px; font-size:16px; color:var(--on-iron-soft)}
   .contacto a{color:var(--on-iron)}
   footer{padding:36px 0 48px; color:var(--ink-soft); font-size:15px}
   footer a{text-decoration:none}
-  .final{background:var(--iron); color:var(--on-iron); padding:56px 0}
+  .final{background:var(--iron); color:var(--on-iron); padding:56px 0; scroll-margin-top:70px}
   .final h2{color:var(--on-iron)}
   .final p{color:var(--on-iron-soft); margin-top:12px}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <a class="brand" href="#">
-      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 22 L13 3 L22 22 L17 22 L13 13 L9 22 Z"/></svg>
-      Forja Labs
-    </a>
-    <a class="small" href="#contacto">Contacto</a>
-  </header>
+
+<div class="top">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="#">
+        <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 22 L13 3 L22 22 L17 22 L13 13 L9 22 Z"/></svg>
+        Forja Labs
+      </a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span></button>
+    </div>
+    <nav id="menu">
+      <a href="#servicios">Qué entregamos</a>
+      <a href="#proceso">Cómo funciona</a>
+      <a href="#precio">Precio</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#contratar">Contratar</a>
+    </nav>
+  </div>
 </div>
 
 <div class="hero">
@@ -101,7 +153,7 @@
 </div>
 
 <div class="wrap">
-  <section>
+  <section id="servicios">
     <h2>Lo que entregamos</h2>
     <p class="sub">Todo lo que un negocio necesita para que un cliente lo encuentre, entienda qué ofrece y pague sin llamar.</p>
     <div class="incl">
@@ -114,7 +166,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="proceso">
     <h2>Cómo funciona</h2>
     <ol class="steps">
       <li><span class="n">1</span><div><strong>Llamada de 30 minutos</strong><span>Entendemos qué vende, a quién y cómo cobra hoy. Salimos con la lista de lo que va en la página.</span></div></li>
@@ -124,7 +176,7 @@
     </ol>
   </section>
 
-  <section>
+  <section id="precio">
     <h2>Un precio, sin letra pequeña</h2>
     <div class="price">
       <div>
@@ -139,7 +191,39 @@
     </div>
   </section>
 
-  <section>
+  <section id="contratar">
+    <h2>Contratar y pagar aquí</h2>
+    <p class="sub">Elija cómo quiere pagar. El cobro es con tarjeta, procesado por Stripe, y al terminar le escribimos el mismo día para agendar la llamada de arranque.</p>
+    <div class="pagos">
+      <div class="pago">
+        <div>
+          <h3>Anticipo del 50 %</h3>
+          <p>La forma habitual de empezar. El resto se paga al entregar la página.</p>
+          <div class="monto">$6,000 MXN <small>una sola vez</small></div>
+        </div>
+        <a class="pagar" href="https://buy.stripe.com/eVqaEY0xi3v2grz2GhgEg0p">Pagar anticipo</a>
+      </div>
+      <div class="pago">
+        <div>
+          <h3>Pago completo</h3>
+          <p>Liquida el paquete de una vez y entra directo a la fila de producción.</p>
+          <div class="monto">$12,000 MXN <small>una sola vez</small></div>
+        </div>
+        <a class="pagar" href="https://buy.stripe.com/cNidRa4Ny5DaejreoZgEg0r">Pagar completo</a>
+      </div>
+      <div class="pago">
+        <div>
+          <h3>Mantenimiento mensual</h3>
+          <p>Cambios de contenido, respaldos, actualizaciones y soporte. Se cancela cuando quiera.</p>
+          <div class="monto">$900 MXN <small>al mes</small></div>
+        </div>
+        <a class="pagar suave" href="https://buy.stripe.com/bJedRabbW1mUa3b2GhgEg0q">Suscribirme</a>
+      </div>
+    </div>
+    <p class="segura">¿Prefiere hablar antes de pagar? Escriba por WhatsApp al 322 310 2049 y lo vemos sin compromiso.</p>
+  </section>
+
+  <section id="paraquien">
     <h2>Para quién es</h2>
     <p class="sub">Profesionales y negocios que ya tienen clientes y todavía cobran por WhatsApp y transferencia.</p>
     <div class="who">
@@ -147,11 +231,12 @@
     </div>
   </section>
 
-  <section>
+  <section id="preguntas">
     <h2>Preguntas frecuentes</h2>
     <div style="margin-top:22px">
       <details><summary>¿Necesito saber de tecnología?</summary><p>No. Usted nos cuenta su negocio y aprueba el diseño. Nosotros hacemos el resto y le entregamos un manual sencillo.</p></details>
-      <details><summary>¿A dónde llega el dinero?</summary><p>A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
+      <details><summary>¿A dónde llega el dinero de mis clientes?</summary><p>A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
+      <details><summary>¿Qué pasa después de pagar el anticipo?</summary><p>Le escribimos el mismo día por WhatsApp para agendar la llamada de 30 minutos y arrancar.</p></details>
       <details><summary>¿Y si después quiero más: cursos, membresías, área de alumnos?</summary><p>Ese es nuestro segundo paquete. La página que entregamos ya está preparada para crecer hacia ahí.</p></details>
       <details><summary>¿Qué pasa si no me gusta el diseño?</summary><p>Lo ve antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 %.</p></details>
     </div>
@@ -177,6 +262,21 @@
   var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
   document.getElementById('cta1').href = url;
   document.getElementById('cta2').href = url;
+
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){
+    var abierto = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!abierto));
+    burger.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
+    menu.classList.toggle('open', !abierto);
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A' && window.innerWidth < 760) {
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Abrir menú');
+    }
+  });
 </script>
 </body>
 </html>
