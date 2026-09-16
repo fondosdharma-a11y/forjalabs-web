@@ -1,86 +1,73 @@
-/* Forja Labs — cambio de idioma.
-   El español vive en el HTML. Cualquier otro idioma se carga desde /i18n/<codigo>.json
-   y se aplica sobre los elementos con data-i18n. Árabe y urdu cambian a escritura derecha-izquierda. */
+/* Cambio de idioma de Forja Labs.
+   El espanol vive en el HTML; los demas idiomas se cargan bajo demanda desde /i18n/<codigo>.json */
 (function () {
   "use strict";
-
   var IDIOMAS = [
-    { c: "es", n: "Español" },
+    { c: "es", n: "Espa\u00f1ol" },
     { c: "en", n: "English" },
     { c: "zh", n: "\u4e2d\u6587" },
     { c: "hi", n: "\u0939\u093f\u0928\u094d\u0926\u0940" },
     { c: "ar", n: "\u0627\u0644\u0639\u0631\u0628\u064a\u0629", rtl: true },
-    { c: "fr", n: "Fran\u00e7ais" },
-    { c: "bn", n: "\u09ac\u09be\u0982\u09b2\u09be" },
     { c: "pt", n: "Portugu\u00eas" },
+    { c: "bn", n: "\u09ac\u09be\u0982\u09b2\u09be" },
     { c: "ru", n: "\u0420\u0443\u0441\u0441\u043a\u0438\u0439" },
+    { c: "fr", n: "Fran\u00e7ais" },
     { c: "ur", n: "\u0627\u0631\u062f\u0648", rtl: true }
   ];
+  var base = {};
+  var sel = document.getElementById("idioma");
+  if (!sel) return;
 
-  var base = {};   // textos originales en español
-  var cache = {};  // diccionarios ya descargados
+  IDIOMAS.forEach(function (i) {
+    var o = document.createElement("option");
+    o.value = i.c; o.textContent = i.n;
+    sel.appendChild(o);
+  });
 
   function nodos() { return document.querySelectorAll("[data-i18n]"); }
 
-  function guardarBase() {
-    nodos().forEach(function (el) {
-      var k = el.getAttribute("data-i18n");
-      var attr = el.getAttribute("data-i18n-attr");
-      base[k] = attr ? el.getAttribute(attr) : el.innerHTML;
-    });
+  // Guarda el espanol original la primera vez
+  nodos().forEach(function (el) { base[el.getAttribute("data-i18n")] = el.innerHTML; });
+
+  function esRtl(c) {
+    for (var i = 0; i < IDIOMAS.length; i++) if (IDIOMAS[i].c === c) return !!IDIOMAS[i].rtl;
+    return false;
   }
 
   function aplicar(dic, codigo) {
     nodos().forEach(function (el) {
       var k = el.getAttribute("data-i18n");
-      var attr = el.getAttribute("data-i18n-attr");
-      var v = (dic && dic[k] != null) ? dic[k] : base[k];
-      if (v == null) return;
-      if (attr) el.setAttribute(attr, v); else el.innerHTML = v;
+      var v = (dic && dic[k]) || base[k];
+      if (v != null) el.innerHTML = v;
     });
-    var info = IDIOMAS.filter(function (i) { return i.c === codigo; })[0] || IDIOMAS[0];
     document.documentElement.lang = codigo;
-    document.documentElement.dir = info.rtl ? "rtl" : "ltr";
-    var sel = document.getElementById("idioma");
-    if (sel) sel.value = codigo;
-    try { localStorage.setItem("forja-idioma", codigo); } catch (e) {}
+    document.documentElement.dir = esRtl(codigo) ? "rtl" : "ltr";
+    sel.value = codigo;
+    try { localStorage.setItem("fl-idioma", codigo); } catch (e) {}
+    document.dispatchEvent(new CustomEvent("fl:idioma", { detail: { codigo: codigo, dic: dic } }));
   }
 
+  var cache = {};
   function cambiar(codigo) {
-    if (codigo === "es") { aplicar(null, "es"); return; }
-    if (cache[codigo]) { aplicar(cache[codigo], codigo); return; }
+    if (codigo === "es") return aplicar(null, "es");
+    if (cache[codigo]) return aplicar(cache[codigo], codigo);
+    sel.disabled = true;
     fetch("/i18n/" + codigo + ".json", { cache: "force-cache" })
       .then(function (r) { if (!r.ok) throw new Error("sin traduccion"); return r.json(); })
       .then(function (d) { cache[codigo] = d; aplicar(d, codigo); })
-      .catch(function () { aplicar(null, "es"); });
+      .catch(function () { aplicar(null, "es"); })
+      .then(function () { sel.disabled = false; });
   }
 
-  function montar() {
-    guardarBase();
+  sel.addEventListener("change", function () { cambiar(sel.value); });
 
-    var caja = document.getElementById("caja-idioma");
-    if (!caja) return;
-    var sel = document.createElement("select");
-    sel.id = "idioma";
-    sel.setAttribute("aria-label", "Idioma / Language");
-    IDIOMAS.forEach(function (i) {
-      var o = document.createElement("option");
-      o.value = i.c; o.textContent = i.n;
-      sel.appendChild(o);
-    });
-    sel.addEventListener("change", function () { cambiar(sel.value); });
-    caja.appendChild(sel);
-
-    var guardado = null;
-    try { guardado = localStorage.getItem("forja-idioma"); } catch (e) {}
-    var inicial = guardado;
-    if (!inicial) {
-      var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
-      inicial = IDIOMAS.some(function (i) { return i.c === nav; }) ? nav : "es";
-    }
-    if (inicial !== "es") cambiar(inicial); else sel.value = "es";
+  // Idioma inicial: el guardado, si no el del navegador, si no espanol
+  var inicial = null;
+  try { inicial = localStorage.getItem("fl-idioma"); } catch (e) {}
+  if (!inicial) {
+    var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+    for (var i = 0; i < IDIOMAS.length; i++) if (IDIOMAS[i].c === nav) inicial = nav;
   }
-
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", montar);
-  else montar();
+  sel.value = inicial || "es";
+  if (inicial && inicial !== "es") cambiar(inicial);
 })();
