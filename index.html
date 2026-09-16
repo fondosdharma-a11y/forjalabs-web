@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Forja Labs — Su negocio cobrando en línea en 10 días</title>
+<title>Forja Labs — Sitios, plataformas y agentes de IA que hacen vender</title>
 <link rel="canonical" href="https://forjalabs.org/">
-<meta name="description" content="Forja Labs construye sitios que cobran: página, pagos y agenda en 10 días, precio fijo. Para profesionales y negocios locales en México.">
-<meta property="og:title" content="Forja Labs — Su negocio cobrando en línea en 10 días">
-<meta property="og:description" content="Página, pagos y agenda listos para recibir clientes. Precio fijo, entrega en 10 días.">
+<meta name="description" content="Forja Labs construye tres cosas para su negocio: una página que cobra, una plataforma de alumnos con membresías, y un agente de IA que atiende WhatsApp. Precio fijo y fechas de entrega claras.">
+<meta property="og:title" content="Forja Labs — Sitios, plataformas y agentes de IA que hacen vender">
+<meta property="og:description" content="Una página que cobra, una plataforma de cursos y membresías, o un agente que atiende su WhatsApp. Precio fijo, entrega en semanas.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://forjalabs.org/">
 <meta property="og:image" content="https://forjalabs.org/logo.svg">
@@ -23,23 +23,22 @@
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#F2F0EC; --ink-soft:#A3ABB3; --line:#2C333A;
-      --ember:#FF5722; --ember-ink:#FFFFFF; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
+      --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
     }
   }
   :root[data-theme="dark"]{
     --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#F2F0EC; --ink-soft:#A3ABB3; --line:#2C333A;
-    --ember:#FF5722; --ember-ink:#FFFFFF; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
+    --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
   }
   *{box-sizing:border-box}
   html,body{margin:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg); color:var(--ink); font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased}
-  .wrap{max-width:880px; margin:0 auto; padding:0 22px}
+  .wrap{max-width:900px; margin:0 auto; padding:0 22px}
   h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.015em; line-height:1.1; margin:0}
   p{margin:0}
   a{color:inherit}
 
-  /* Cabecera con menú */
   .top{position:sticky; top:0; z-index:40; background:var(--header); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
   .topbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
   .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; text-decoration:none}
@@ -59,29 +58,37 @@
   #menu.open{display:block}
   #menu a{display:block; padding:13px 2px; text-decoration:none; font-size:17px; border-bottom:1px solid var(--line)}
   #menu a:last-child{border-bottom:0; color:var(--ember); font-weight:600}
-  @media (min-width:760px){
+  @media (min-width:800px){
     .burger{display:none}
-    #menu{display:flex !important; gap:24px; padding:0; align-items:center}
+    #menu{display:flex !important; gap:22px; padding:0; align-items:center}
     #menu a{border-bottom:0; padding:0; font-size:15px; color:var(--ink-soft)}
     #menu a:hover{color:var(--ink)}
   }
 
   .hero{background:var(--iron); color:var(--on-iron); padding:60px 0 56px}
-  .hero h1{font-size:clamp(38px, 7vw, 64px); max-width:14ch}
-  .hero p.lead{margin-top:22px; font-size:20px; color:var(--on-iron-soft); max-width:40ch}
+  .hero h1{font-size:clamp(36px, 6.4vw, 60px); max-width:17ch}
+  .hero p.lead{margin-top:22px; font-size:20px; color:var(--on-iron-soft); max-width:46ch}
   .cta{display:inline-block; margin-top:32px; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:15px 24px; border-radius:8px; font-size:17px}
   .cta:hover{filter:brightness(1.06)}
   .hero .meta{margin-top:18px; font-size:15px; color:var(--on-iron-soft)}
 
-  section{padding:56px 0; scroll-margin-top:70px}
+  section{padding:56px 0; scroll-margin-top:72px}
   section + section{border-top:1px solid var(--line)}
   h2{font-size:clamp(28px, 4.5vw, 38px); max-width:22ch}
-  .sub{margin-top:10px; color:var(--ink-soft); max-width:56ch}
+  .sub{margin-top:10px; color:var(--ink-soft); max-width:58ch}
 
-  .incl{margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px}
-  .incl div{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:18px}
-  .incl strong{display:block; font-weight:600; margin-bottom:4px}
-  .incl span{color:var(--ink-soft); font-size:15px}
+  .paquetes{margin-top:30px; display:grid; gap:18px}
+  .pq{background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:26px; position:relative}
+  .pq.destacado{border-color:var(--ember)}
+  .pq .etiqueta{position:absolute; top:-11px; left:24px; background:var(--ember); color:var(--ember-ink); font-size:12px; font-weight:600; padding:3px 10px; border-radius:999px}
+  .pq h3{font-size:25px}
+  .pq .para{margin-top:6px; color:var(--ink-soft); font-size:15px}
+  .pq ul{margin:16px 0 0; padding-left:20px; color:var(--ink-soft)}
+  .pq ul li{margin-bottom:5px}
+  .pq .cifras{margin-top:18px; padding-top:16px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:22px; align-items:baseline}
+  .pq .precio{font-family:"Fraunces",Georgia,serif; font-size:30px}
+  .pq .precio small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft); display:block; margin-top:2px}
+  .pq .link{margin-top:16px; display:inline-block; color:var(--ember); font-weight:600; text-decoration:none}
 
   ol.steps{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:0; border-top:1px solid var(--line)}
   ol.steps li{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:20px 0; border-bottom:1px solid var(--line)}
@@ -89,23 +96,20 @@
   ol.steps strong{display:block; font-weight:600}
   ol.steps span{color:var(--ink-soft)}
 
-  .price{margin-top:28px; background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:28px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center}
-  .price .amt{font-family:"Fraunces",Georgia,serif; font-size:46px; line-height:1}
-  .price .amt small{font-family:"Instrument Sans",sans-serif; font-size:15px; color:var(--ink-soft); display:block; margin-top:6px}
-  .price ul{margin:0; padding-left:18px; color:var(--ink-soft)}
-  @media (max-width:600px){.price{grid-template-columns:1fr}}
-
-  .pagos{margin-top:28px; display:grid; gap:14px}
-  .pago{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:22px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
-  .pago h3{font-size:21px}
-  .pago p{color:var(--ink-soft); font-size:15px; margin-top:4px; max-width:42ch}
-  .pago .monto{font-family:"Fraunces",Georgia,serif; font-size:26px; margin-top:8px}
+  .grupo{margin-top:34px}
+  .grupo > h3{font-size:22px; margin-bottom:4px}
+  .grupo > p{color:var(--ink-soft); font-size:15px}
+  .pagos{margin-top:14px; display:grid; gap:12px}
+  .pago{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:20px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
+  .pago strong{display:block; font-weight:600; font-size:17px}
+  .pago p{color:var(--ink-soft); font-size:15px; margin-top:3px; max-width:44ch}
+  .pago .monto{font-family:"Fraunces",Georgia,serif; font-size:24px; margin-top:8px}
   .pago .monto small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft)}
   .pagar{display:inline-block; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap}
   .pagar.suave{background:transparent; color:var(--ink); border:1px solid var(--line)}
   .pagar:hover{filter:brightness(1.06)}
-  @media (max-width:600px){.pago{grid-template-columns:1fr} .pagar{text-align:center}}
-  .segura{margin-top:16px; font-size:14px; color:var(--ink-soft)}
+  @media (max-width:620px){.pago{grid-template-columns:1fr} .pagar{text-align:center}}
+  .segura{margin-top:22px; font-size:14px; color:var(--ink-soft)}
 
   .who{margin-top:24px; display:flex; flex-wrap:wrap; gap:8px}
   .who span{background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:15px}
@@ -120,7 +124,7 @@
   .contacto a{color:var(--on-iron)}
   footer{padding:36px 0 48px; color:var(--ink-soft); font-size:15px}
   footer a{text-decoration:none}
-  .final{background:var(--iron); color:var(--on-iron); padding:56px 0; scroll-margin-top:70px}
+  .final{background:var(--iron); color:var(--on-iron); padding:56px 0; scroll-margin-top:72px}
   .final h2{color:var(--on-iron)}
   .final p{color:var(--on-iron-soft); margin-top:12px}
 </style>
@@ -137,9 +141,8 @@
       <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span></button>
     </div>
     <nav id="menu">
-      <a href="#servicios">Qué entregamos</a>
+      <a href="#paquetes">Qué hacemos</a>
       <a href="#proceso">Cómo funciona</a>
-      <a href="#precio">Precio</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#contratar">Contratar</a>
     </nav>
@@ -148,99 +151,161 @@
 
 <div class="hero">
   <div class="wrap">
-    <h1>Su negocio, cobrando en línea en 10 días.</h1>
-    <p class="lead">Página, pagos y agenda listos para recibir clientes. Precio fijo, sin sorpresas y sin depender de un programador después.</p>
-    <a class="cta" id="cta1" href="https://wa.me/523223102049">Quiero cobrar en línea</a>
+    <h1>Que su negocio venda y atienda sin usted delante.</h1>
+    <p class="lead">Construimos tres cosas: una página que cobra sola, una plataforma donde sus alumnos pagan y estudian, y un agente de IA que contesta su WhatsApp. Precio fijo y fecha de entrega, desde el primer día.</p>
+    <a class="cta" id="cta1" href="https://wa.me/523223102049">Hablemos de mi negocio</a>
     <p class="meta">Respondemos el mismo día. Sin compromiso.</p>
   </div>
 </div>
 
 <div class="wrap">
-  <section id="servicios">
-    <h2>Lo que entregamos</h2>
-    <p class="sub">Todo lo que un negocio necesita para que un cliente lo encuentre, entienda qué ofrece y pague sin llamar.</p>
-    <div class="incl">
-      <div><strong>Página profesional</strong><span>Una sola página, clara y rápida, que se ve bien en el teléfono de sus clientes.</span></div>
-      <div><strong>Cobro en línea</strong><span>Tarjeta, transferencia y pagos recurrentes con Stripe. El dinero llega a su cuenta.</span></div>
-      <div><strong>Agenda o contacto</strong><span>Sus clientes reservan o le escriben desde la página, con aviso a su WhatsApp o correo.</span></div>
-      <div><strong>Dominio y hosting</strong><span>Su nombre en internet, configurado y a su nombre. Sin cuotas mensuales de hosting.</span></div>
-      <div><strong>Catálogo de servicios</strong><span>Sus servicios, precios y paquetes escritos para vender, no solo para informar.</span></div>
-      <div><strong>Entrega con manual</strong><span>Le explicamos cómo cambiar textos, precios y fotos usted mismo. Sin dependencia.</span></div>
+  <section id="paquetes">
+    <h2>Tres formas de trabajar con nosotros</h2>
+    <p class="sub">Cada una resuelve un cuello de botella distinto. Si no sabe cuál le toca, escríbanos y se lo decimos con honestidad, aunque la respuesta sea "todavía no necesita nada".</p>
+
+    <div class="paquetes">
+      <div class="pq destacado">
+        <span class="etiqueta">El más pedido</span>
+        <h3>Presencia que cobra</h3>
+        <p class="para">Para quien ya tiene clientes y todavía cobra por transferencia y WhatsApp.</p>
+        <ul>
+          <li>Página profesional de una sola pantalla, rápida y clara en el teléfono</li>
+          <li>Cobro con tarjeta y transferencia mediante Stripe, a su propia cuenta</li>
+          <li>Agenda o formulario, con aviso a su WhatsApp o correo</li>
+          <li>Dominio, hosting y catálogo de servicios escritos para vender</li>
+          <li>Manual sencillo para que usted cambie textos y precios</li>
+        </ul>
+        <div class="cifras">
+          <div class="precio">Desde $12,000 MXN<small>Pago único · 50 % al iniciar</small></div>
+          <div class="precio">10 días<small>Tiempo de entrega</small></div>
+        </div>
+        <a class="link" href="#contratar">Contratar este paquete</a>
+      </div>
+
+      <div class="pq">
+        <h3>Plataforma de alumnos</h3>
+        <p class="para">Para quien vende cursos, membresías o sesiones y hoy los reparte a mano por WhatsApp y Drive.</p>
+        <ul>
+          <li>Todo lo del paquete anterior, más un área privada de alumnos</li>
+          <li>Catálogo de cursos con lecciones, videos y materiales descargables</li>
+          <li>Membresías y suscripciones con cobro automático cada mes</li>
+          <li>Altas y bajas automáticas: quien deja de pagar pierde el acceso solo</li>
+          <li>Panel para ver quién entró, quién avanza y quién está por vencer</li>
+          <li>Reserva de sesiones uno a uno con pago por adelantado</li>
+        </ul>
+        <div class="cifras">
+          <div class="precio">Desde $35,000 MXN<small>Pago único · 50 % al iniciar</small></div>
+          <div class="precio">$2,000 MXN<small>Mantenimiento al mes</small></div>
+          <div class="precio">3–4 semanas<small>Tiempo de entrega</small></div>
+        </div>
+        <a class="link" href="#contratar">Contratar este paquete</a>
+      </div>
+
+      <div class="pq">
+        <h3>Agente de IA para su negocio</h3>
+        <p class="para">Para quien pierde clientes por no contestar a tiempo: clínicas, inmobiliarias, restaurantes, tiendas.</p>
+        <ul>
+          <li>Atiende en WhatsApp o en su página, todo el día, todos los días</li>
+          <li>Responde precios, horarios, ubicación y las preguntas de siempre</li>
+          <li>Agenda citas y las manda a su calendario</li>
+          <li>Captura nombre, teléfono y qué necesita cada persona que escribe</li>
+          <li>Le pasa la conversación a usted en cuanto el caso lo amerita</li>
+          <li>Panel para ver conversaciones, citas y contactos nuevos</li>
+        </ul>
+        <div class="cifras">
+          <div class="precio">Desde $20,000 MXN<small>Implementación · 50 % al iniciar</small></div>
+          <div class="precio">$2,500 MXN<small>Servicio al mes</small></div>
+          <div class="precio">2–3 semanas<small>Tiempo de entrega</small></div>
+        </div>
+        <a class="link" href="#contratar">Contratar este paquete</a>
+      </div>
     </div>
   </section>
 
   <section id="proceso">
     <h2>Cómo funciona</h2>
+    <p class="sub">El mismo camino para los tres paquetes. Usted decide y aprueba; nosotros construimos.</p>
     <ol class="steps">
-      <li><span class="n">1</span><div><strong>Llamada de 30 minutos</strong><span>Entendemos qué vende, a quién y cómo cobra hoy. Salimos con la lista de lo que va en la página.</span></div></li>
-      <li><span class="n">2</span><div><strong>Propuesta en 48 horas</strong><span>Le mostramos el diseño en su teléfono. Ajustamos lo que haga falta antes de construir.</span></div></li>
-      <li><span class="n">3</span><div><strong>Construcción y pagos</strong><span>Armamos la página, conectamos Stripe y probamos un cobro real con usted.</span></div></li>
-      <li><span class="n">4</span><div><strong>Entrega en 10 días</strong><span>Dominio activo, página en línea y manual de uso. Desde ese día puede cobrar.</span></div></li>
+      <li><span class="n">1</span><div><strong>Llamada de 30 minutos</strong><span>Entendemos qué vende, a quién y dónde se le atora el dinero hoy. Salimos con la lista de lo que hay que construir.</span></div></li>
+      <li><span class="n">2</span><div><strong>Propuesta en 48 horas</strong><span>Le mostramos el diseño en su teléfono, con alcance y fecha por escrito. Ajustamos antes de construir nada.</span></div></li>
+      <li><span class="n">3</span><div><strong>Construcción y pruebas</strong><span>Armamos todo, conectamos los pagos y probamos un cobro real con usted. Nada se entrega sin probarse.</span></div></li>
+      <li><span class="n">4</span><div><strong>Entrega y manual</strong><span>Todo queda a su nombre y en su cuenta, con un manual para operarlo. Desde ese día puede cobrar.</span></div></li>
     </ol>
-  </section>
-
-  <section id="precio">
-    <h2>Un precio, sin letra pequeña</h2>
-    <div class="price">
-      <div>
-        <div class="amt">Desde $12,000 MXN<small>Pago único · 50 % al iniciar, 50 % al entregar</small></div>
-      </div>
-      <ul>
-        <li>Página, pagos, agenda y dominio incluidos</li>
-        <li>Hasta dos rondas de ajustes</li>
-        <li>Comisiones de Stripe se pagan directo a Stripe</li>
-        <li>Mantenimiento opcional desde $900 MXN al mes</li>
-      </ul>
-    </div>
   </section>
 
   <section id="contratar">
     <h2>Contratar y pagar aquí</h2>
-    <p class="sub">Elija cómo quiere pagar. El cobro es con tarjeta, procesado por Stripe, y al terminar le escribimos el mismo día para agendar la llamada de arranque.</p>
-    <div class="pagos">
-      <div class="pago">
-        <div>
-          <h3>Anticipo del 50 %</h3>
-          <p>La forma habitual de empezar. El resto se paga al entregar la página.</p>
-          <div class="monto">$6,000 MXN <small>una sola vez</small></div>
+    <p class="sub">El cobro es con tarjeta y lo procesa Stripe. Al terminar le escribimos el mismo día para agendar el arranque. Si prefiere hablar antes de pagar, escriba por WhatsApp al 322 310 2049.</p>
+
+    <div class="grupo">
+      <h3>Presencia que cobra</h3>
+      <p>Página, pagos y agenda. Entrega en 10 días.</p>
+      <div class="pagos">
+        <div class="pago">
+          <div><strong>Anticipo del 50 %</strong><p>La forma habitual de empezar. El resto se paga al entregar.</p><div class="monto">$6,000 MXN <small>una sola vez</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/eVqaEY0xi3v2grz2GhgEg0p">Pagar anticipo</a>
         </div>
-        <a class="pagar" href="https://buy.stripe.com/eVqaEY0xi3v2grz2GhgEg0p">Pagar anticipo</a>
-      </div>
-      <div class="pago">
-        <div>
-          <h3>Pago completo</h3>
-          <p>Liquida el paquete de una vez y entra directo a la fila de producción.</p>
-          <div class="monto">$12,000 MXN <small>una sola vez</small></div>
+        <div class="pago">
+          <div><strong>Pago completo</strong><p>Liquida el paquete y entra directo a producción.</p><div class="monto">$12,000 MXN <small>una sola vez</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/cNidRa4Ny5DaejreoZgEg0r">Pagar completo</a>
         </div>
-        <a class="pagar" href="https://buy.stripe.com/cNidRa4Ny5DaejreoZgEg0r">Pagar completo</a>
-      </div>
-      <div class="pago">
-        <div>
-          <h3>Mantenimiento mensual</h3>
-          <p>Cambios de contenido, respaldos, actualizaciones y soporte. Se cancela cuando quiera.</p>
-          <div class="monto">$900 MXN <small>al mes</small></div>
+        <div class="pago">
+          <div><strong>Mantenimiento mensual</strong><p>Cambios de contenido, respaldos y soporte. Se cancela cuando quiera.</p><div class="monto">$900 MXN <small>al mes</small></div></div>
+          <a class="pagar suave" href="https://buy.stripe.com/bJedRabbW1mUa3b2GhgEg0q">Suscribirme</a>
         </div>
-        <a class="pagar suave" href="https://buy.stripe.com/bJedRabbW1mUa3b2GhgEg0q">Suscribirme</a>
       </div>
     </div>
-    <p class="segura">¿Prefiere hablar antes de pagar? Escriba por WhatsApp al 322 310 2049 y lo vemos sin compromiso.</p>
+
+    <div class="grupo">
+      <h3>Plataforma de alumnos</h3>
+      <p>Cursos, membresías y cobros recurrentes. Entrega en 3 a 4 semanas.</p>
+      <div class="pagos">
+        <div class="pago">
+          <div><strong>Anticipo del 50 %</strong><p>Arrancamos con el diseño y la estructura de sus cursos.</p><div class="monto">$17,500 MXN <small>una sola vez</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/aFa9AU2Fq2qY2AJ1CdgEg0v">Pagar anticipo</a>
+        </div>
+        <div class="pago">
+          <div><strong>Mantenimiento mensual</strong><p>Altas de cursos, respaldos, soporte a sus alumnos y monitoreo de pagos.</p><div class="monto">$2,000 MXN <small>al mes</small></div></div>
+          <a class="pagar suave" href="https://buy.stripe.com/7sYcN6gwg2qYb7f6WxgEg0t">Suscribirme</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <h3>Agente de IA</h3>
+      <p>Atención automática en WhatsApp o web. Entrega en 2 a 3 semanas.</p>
+      <div class="pagos">
+        <div class="pago">
+          <div><strong>Anticipo del 50 %</strong><p>Levantamos las preguntas de su negocio y entrenamos al agente.</p><div class="monto">$10,000 MXN <small>una sola vez</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/9B68wQ5RC3v28Z70y9gEg0s">Pagar anticipo</a>
+        </div>
+        <div class="pago">
+          <div><strong>Servicio mensual</strong><p>Hospedaje, consumo de IA, ajustes de respuestas y soporte. Necesario para que el agente opere.</p><div class="monto">$2,500 MXN <small>al mes</small></div></div>
+          <a class="pagar suave" href="https://buy.stripe.com/fZu28s6VG9TqfnveoZgEg0u">Suscribirme</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="segura">Los precios son de partida. Si su proyecto pide más de lo que incluye el paquete, se lo decimos antes de cobrar, no después.</p>
   </section>
 
   <section id="paraquien">
-    <h2>Para quién es</h2>
-    <p class="sub">Profesionales y negocios que ya tienen clientes y todavía cobran por WhatsApp y transferencia.</p>
+    <h2>Para quién trabajamos</h2>
+    <p class="sub">Negocios que ya tienen clientes y quieren dejar de perder tiempo y dinero en la parte administrativa.</p>
     <div class="who">
-      <span>Terapeutas y coaches</span><span>Consultorios</span><span>Talleres y cursos</span><span>Escuelas pequeñas</span><span>Nutriólogos y entrenadores</span><span>Estudios y consultoras</span>
+      <span>Terapeutas y coaches</span><span>Institutos y escuelas</span><span>Consultorios y clínicas</span><span>Talleres y cursos</span><span>Inmobiliarias</span><span>Nutriólogos y entrenadores</span><span>Restaurantes</span><span>Estudios y consultoras</span>
     </div>
   </section>
 
   <section id="preguntas">
     <h2>Preguntas frecuentes</h2>
     <div style="margin-top:22px">
-      <details><summary>¿Necesito saber de tecnología?</summary><p>No. Usted nos cuenta su negocio y aprueba el diseño. Nosotros hacemos el resto y le entregamos un manual sencillo.</p></details>
+      <details><summary>¿Necesito saber de tecnología?</summary><p>No. Usted cuenta su negocio y aprueba el diseño. Nosotros hacemos el resto y le entregamos un manual sencillo.</p></details>
       <details><summary>¿A dónde llega el dinero de mis clientes?</summary><p>A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
       <details><summary>¿Qué pasa después de pagar el anticipo?</summary><p>Le escribimos el mismo día por WhatsApp para agendar la llamada de 30 minutos y arrancar.</p></details>
-      <details><summary>¿Y si después quiero más: cursos, membresías, área de alumnos?</summary><p>Ese es nuestro segundo paquete. La página que entregamos ya está preparada para crecer hacia ahí.</p></details>
+      <details><summary>¿Por qué el agente de IA y la plataforma tienen mensualidad?</summary><p>Porque siguen consumiendo recursos después de entregados: hospedaje, respaldos y, en el caso del agente, el costo de cada conversación. La mensualidad cubre eso y el soporte. La página sencilla no la necesita.</p></details>
+      <details><summary>¿Puedo empezar con la página y crecer después?</summary><p>Sí, y es lo que recomendamos. Lo que entregamos en el primer paquete está preparado para convertirse en plataforma de alumnos sin rehacerlo.</p></details>
+      <details><summary>¿El agente de IA puede inventarse cosas?</summary><p>Se configura con la información real de su negocio y con instrucciones de qué no debe responder. Cuando no sabe algo, lo dice y le pasa la conversación a usted. Ningún agente sustituye su criterio en un caso delicado.</p></details>
       <details><summary>¿Qué pasa si no me gusta el diseño?</summary><p>Lo ve antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 %.</p></details>
     </div>
   </section>
@@ -249,7 +314,7 @@
 <div class="final" id="contacto">
   <div class="wrap">
     <h2>Cuénteme de su negocio.</h2>
-    <p>Un mensaje basta. Le respondo el mismo día con una propuesta clara.</p>
+    <p>Un mensaje basta. Le respondo el mismo día y le digo qué le conviene, sin adornos.</p>
     <a class="cta" id="cta2" href="https://wa.me/523223102049">Escribir por WhatsApp</a>
     <p class="contacto">O por correo: <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · WhatsApp 322 310 2049</p>
   </div>
@@ -261,7 +326,7 @@
 
 <script>
   var WHATSAPP = "523223102049";
-  var texto = "Hola, vi la página de Forja Labs y me interesa el paquete de sitio con pagos. Mi negocio es: ";
+  var texto = "Hola, vi la página de Forja Labs y me interesa trabajar con ustedes. Mi negocio es: ";
   var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
   document.getElementById('cta1').href = url;
   document.getElementById('cta2').href = url;
@@ -274,7 +339,7 @@
     menu.classList.toggle('open', !abierto);
   });
   menu.addEventListener('click', function(e){
-    if (e.target.tagName === 'A' && window.innerWidth < 760) {
+    if (e.target.tagName === 'A' && window.innerWidth < 800) {
       menu.classList.remove('open');
       burger.setAttribute('aria-expanded','false');
       burger.setAttribute('aria-label','Abrir menú');
