@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forja Labs — Su negocio cobrando en línea en 10 días</title>
+<link rel="canonical" href="https://forjalabs.org/">
+<meta name="description" content="Forja Labs construye sitios que cobran: página, pagos y agenda en 10 días, precio fijo. Para profesionales y negocios locales en México.">
+<meta property="og:title" content="Forja Labs — Su negocio cobrando en línea en 10 días">
+<meta property="og:description" content="Página, pagos y agenda listos para recibir clientes. Precio fijo, entrega en 10 días.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forjalabs.org/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath fill='%23D4571E' d='M4 22 L13 3 L22 22 L17 22 L13 13 L9 22 Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEEFF1; --paper:#F8F8F7; --iron:#22272B; --ink:#15191D; --ink-soft:#586069; --line:#D3D7DC;
+    --ember:#D4571E; --ember-ink:#FFFFFF; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#EDEFF1; --ink-soft:#A3ABB3; --line:#2C333A;
+      --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#EDEFF1; --ink-soft:#A3ABB3; --line:#2C333A;
+    --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg); color:var(--ink); font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px; margin:0 auto; padding:0 22px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.015em; line-height:1.1; margin:0}
+  p{margin:0}
+  a{color:inherit}
+  header{padding:22px 0; display:flex; align-items:center; justify-content:space-between}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; text-decoration:none}
+  .brand svg{width:26px; height:26px}
+  .brand svg path{fill:var(--ember)}
+  header a.small{font-size:15px; color:var(--ink-soft); text-decoration:none}
+  .hero{background:var(--iron); color:var(--on-iron); padding:64px 0 60px}
+  .hero h1{font-size:clamp(38px, 7vw, 64px); max-width:14ch}
+  .hero p.lead{margin-top:22px; font-size:20px; color:var(--on-iron-soft); max-width:40ch}
+  .cta{display:inline-block; margin-top:32px; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:15px 24px; border-radius:8px; font-size:17px}
+  .cta:hover{filter:brightness(1.06)}
+  .hero .meta{margin-top:18px; font-size:15px; color:var(--on-iron-soft)}
+  section{padding:56px 0}
+  section + section{border-top:1px solid var(--line)}
+  h2{font-size:clamp(28px, 4.5vw, 38px); max-width:22ch}
+  .sub{margin-top:10px; color:var(--ink-soft); max-width:56ch}
+  .incl{margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px}
+  .incl div{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:18px}
+  .incl strong{display:block; font-weight:600; margin-bottom:4px}
+  .incl span{color:var(--ink-soft); font-size:15px}
+  ol.steps{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:0; border-top:1px solid var(--line)}
+  ol.steps li{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:20px 0; border-bottom:1px solid var(--line)}
+  ol.steps .n{font-family:"Fraunces",Georgia,serif; font-size:34px; color:var(--ember); line-height:1}
+  ol.steps strong{display:block; font-weight:600}
+  ol.steps span{color:var(--ink-soft)}
+  .price{margin-top:28px; background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:28px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center}
+  .price .amt{font-family:"Fraunces",Georgia,serif; font-size:46px; line-height:1}
+  .price .amt small{font-family:"Instrument Sans",sans-serif; font-size:15px; color:var(--ink-soft); display:block; margin-top:6px}
+  .price ul{margin:0; padding-left:18px; color:var(--ink-soft)}
+  @media (max-width:600px){.price{grid-template-columns:1fr}}
+  .who{margin-top:24px; display:flex; flex-wrap:wrap; gap:8px}
+  .who span{background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:8px 14px; font-size:15px}
+  details{border-top:1px solid var(--line); padding:16px 0}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer; font-weight:600; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  details p{margin-top:10px; color:var(--ink-soft)}
+  footer{padding:36px 0 48px; color:var(--ink-soft); font-size:15px}
+  footer a{text-decoration:none}
+  .final{background:var(--iron); color:var(--on-iron); padding:56px 0}
+  .final h2{color:var(--on-iron)}
+  .final p{color:var(--on-iron-soft); margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 22 L13 3 L22 22 L17 22 L13 13 L9 22 Z"/></svg>
+      Forja Labs
+    </a>
+    <a class="small" href="#contacto">Contacto</a>
+  </header>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Su negocio, cobrando en línea en 10 días.</h1>
+    <p class="lead">Página, pagos y agenda listos para recibir clientes. Precio fijo, sin sorpresas y sin depender de un programador después.</p>
+    <a class="cta" id="cta1" href="#contacto">Quiero cobrar en línea</a>
+    <p class="meta">Respondemos el mismo día. Sin compromiso.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>Lo que entregamos</h2>
+    <p class="sub">Todo lo que un negocio necesita para que un cliente lo encuentre, entienda qué ofrece y pague sin llamar.</p>
+    <div class="incl">
+      <div><strong>Página profesional</strong><span>Una sola página, clara y rápida, que se ve bien en el teléfono de sus clientes.</span></div>
+      <div><strong>Cobro en línea</strong><span>Tarjeta, transferencia y pagos recurrentes con Stripe. El dinero llega a su cuenta.</span></div>
+      <div><strong>Agenda o contacto</strong><span>Sus clientes reservan o le escriben desde la página, con aviso a su WhatsApp o correo.</span></div>
+      <div><strong>Dominio y hosting</strong><span>Su nombre en internet, configurado y a su nombre. Sin cuotas mensuales de hosting.</span></div>
+      <div><strong>Catálogo de servicios</strong><span>Sus servicios, precios y paquetes escritos para vender, no solo para informar.</span></div>
+      <div><strong>Entrega con manual</strong><span>Le explicamos cómo cambiar textos, precios y fotos usted mismo. Sin dependencia.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <ol class="steps">
+      <li><span class="n">1</span><div><strong>Llamada de 30 minutos</strong><span>Entendemos qué vende, a quién y cómo cobra hoy. Salimos con la lista de lo que va en la página.</span></div></li>
+      <li><span class="n">2</span><div><strong>Propuesta en 48 horas</strong><span>Le mostramos el diseño en su teléfono. Ajustamos lo que haga falta antes de construir.</span></div></li>
+      <li><span class="n">3</span><div><strong>Construcción y pagos</strong><span>Armamos la página, conectamos Stripe y probamos un cobro real con usted.</span></div></li>
+      <li><span class="n">4</span><div><strong>Entrega en 10 días</strong><span>Dominio activo, página en línea y manual de uso. Desde ese día puede cobrar.</span></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Un precio, sin letra pequeña</h2>
+    <div class="price">
+      <div>
+        <div class="amt">Desde $12,000 MXN<small>Pago único · 50 % al iniciar, 50 % al entregar</small></div>
+      </div>
+      <ul>
+        <li>Página, pagos, agenda y dominio incluidos</li>
+        <li>Hasta dos rondas de ajustes</li>
+        <li>Comisiones de Stripe se pagan directo a Stripe</li>
+        <li>Mantenimiento opcional desde $900 MXN al mes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Para quién es</h2>
+    <p class="sub">Profesionales y negocios que ya tienen clientes y todavía cobran por WhatsApp y transferencia.</p>
+    <div class="who">
+      <span>Terapeutas y coaches</span><span>Consultorios</span><span>Talleres y cursos</span><span>Escuelas pequeñas</span><span>Nutriólogos y entrenadores</span><span>Estudios y consultoras</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <div style="margin-top:22px">
+      <details><summary>¿Necesito saber de tecnología?</summary><p>No. Usted nos cuenta su negocio y aprueba el diseño. Nosotros hacemos el resto y le entregamos un manual sencillo.</p></details>
+      <details><summary>¿A dónde llega el dinero?</summary><p>A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
+      <details><summary>¿Y si después quiero más: cursos, membresías, área de alumnos?</summary><p>Ese es nuestro segundo paquete. La página que entregamos ya está preparada para crecer hacia ahí.</p></details>
+      <details><summary>¿Qué pasa si no me gusta el diseño?</summary><p>Lo ve antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 %.</p></details>
+    </div>
+  </section>
+</div>
+
+<div class="final" id="contacto">
+  <div class="wrap">
+    <h2>Cuénteme de su negocio.</h2>
+    <p>Un mensaje basta. Le respondo el mismo día con una propuesta clara.</p>
+    <a class="cta" id="cta2" href="#">Escribir por WhatsApp</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>Forja Labs · Desarrollo web, pagos y automatización con IA · México · <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a></footer>
+</div>
+
+<script>
+  // Sustituir por el número real de WhatsApp (formato internacional sin '+', ej. 521XXXXXXXXXX)
+  var WHATSAPP = "";
+  var texto = "Hola, vi la página de Forja Labs y me interesa el paquete de sitio con pagos. Mi negocio es: ";
+  var b1 = document.getElementById('cta1'), b2 = document.getElementById('cta2');
+  if (WHATSAPP) {
+    var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
+    b1.href = url; b2.href = url;
+  } else {
+    b2.href = "mailto:hola@forjalabs.org?subject=" + encodeURIComponent("Quiero una página que cobre") + "&body=" + encodeURIComponent(texto);
+    b2.textContent = "Escribir un correo";
+  }
+</script>
+</body>
+</html>
