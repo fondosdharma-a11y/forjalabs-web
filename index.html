@@ -24,152 +24,129 @@
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Forja Labs","url":"https://forjalabs.org/","logo":"https://forjalabs.org/logo.svg","image":"https://forjalabs.org/og.png","description":"Páginas con cobro en línea y agentes de IA que atienden WhatsApp, para cualquier negocio.","email":"hola@forjalabs.org","telephone":"+523223102049","areaServed":"MX","priceRange":"$$","address":{"@type":"PostalAddress","addressCountry":"MX"}}
 </script>
 <style>
-  :root{
-    --bg:#EEEFF1; --paper:#F8F8F7; --iron:#20262B; --ink:#15191D; --ink-soft:#586069; --line:#D3D7DC;
-    --ember:#FF5722; --ember-ink:#FFFFFF; --spark:#FFC845; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(238,239,241,.93);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#F2F0EC; --ink-soft:#A3ABB3; --line:#2C333A;
-      --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.93);
-    }
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0}
-  html{scroll-behavior:smooth}
+  :root{--bg:#EEEFF1;--paper:#F8F8F7;--iron:#20262B;--ink:#15191D;--ink-soft:#586069;--line:#D3D7DC;--ember:#FF5722;--ember-ink:#FFF;--spark:#FFC845;--on-iron:#F2F0EC;--on-iron-soft:#A9B1B9;--header:rgba(238,239,241,.93)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14181C;--paper:#1C2126;--iron:#0F1215;--ink:#F2F0EC;--ink-soft:#A3ABB3;--line:#2C333A;--header:rgba(20,24,28,.93)}}
+  *{box-sizing:border-box} html,body{margin:0} html{scroll-behavior:smooth}
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-  body{background:var(--bg); color:var(--ink); font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased}
-  [dir="rtl"] body{font-family:"Segoe UI",Tahoma,-apple-system,sans-serif}
-  .wrap{max-width:900px; margin:0 auto; padding:0 22px}
-  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.015em; line-height:1.12; margin:0}
-  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:"Segoe UI",Tahoma,serif; letter-spacing:0}
-  p{margin:0}
-  a{color:inherit}
-  a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--ember); outline-offset:3px; border-radius:4px}
-  .saltar{position:absolute; left:-9999px; background:var(--ember); color:#fff; padding:10px 16px; border-radius:8px}
-  .saltar:focus{left:12px; top:12px; z-index:60}
+  body{background:var(--bg);color:var(--ink);font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  [dir="rtl"] body{font-family:"Instrument Sans","Noto Naskh Arabic",Tahoma,sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.015em;line-height:1.12;margin:0}
+  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{letter-spacing:0}
+  p{margin:0} a{color:inherit}
+  a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:4px}
+  .saltar{position:absolute;left:-9999px;background:var(--ember);color:#fff;padding:10px 16px;border-radius:8px}
+  .saltar:focus{left:12px;top:12px;z-index:60}
 
-  .cinta{background:var(--ember); color:#fff; text-align:center; padding:10px 18px; font-size:15px; font-weight:500}
-  .cinta b{font-weight:600}
-  .cinta a{color:#fff}
-
-  .top{position:sticky; top:0; z-index:40; background:var(--header); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
-  .topbar{display:flex; align-items:center; gap:12px; justify-content:space-between; padding:13px 0}
-  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; text-decoration:none}
-  .brand svg{width:30px; height:30px; display:block}
+  .aviso{background:var(--ember);color:#fff;text-align:center;padding:9px 16px;font-size:14.5px;font-weight:500}
+  .aviso a{color:#fff}
+  .top{position:sticky;top:0;z-index:40;background:var(--header);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:13px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px;text-decoration:none}
+  .brand svg{width:30px;height:30px;display:block}
   .brand .f{fill:var(--ink)} .brand .bar{fill:var(--ember)} .brand .spark{fill:var(--spark)}
-  .herramientas{display:flex; align-items:center; gap:10px; margin-inline-start:auto}
-  #idioma{background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:9px; padding:9px 10px; font:15px inherit; max-width:140px}
-  .burger{width:44px; height:44px; display:grid; place-items:center; background:none; border:1px solid var(--line); border-radius:10px; cursor:pointer; color:var(--ink)}
-  .burger span{display:block; width:20px; height:2px; background:currentColor; position:relative; transition:transform .18s ease, background .18s ease}
-  .burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:currentColor; transition:transform .18s ease, top .18s ease}
+  .derecha{display:flex;align-items:center;gap:10px}
+  #idioma{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:9px 10px;font:500 14px inherit;max-width:132px}
+  .burger{width:44px;height:44px;display:grid;place-items:center;background:none;border:1px solid var(--line);border-radius:10px;cursor:pointer;color:var(--ink)}
+  .burger span{display:block;width:20px;height:2px;background:currentColor;position:relative;transition:transform .18s ease,background .18s ease}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;transition:transform .18s ease,top .18s ease}
   .burger span::before{top:-6px} .burger span::after{top:6px}
   .burger[aria-expanded="true"] span{background:transparent}
-  .burger[aria-expanded="true"] span::before{top:0; transform:rotate(45deg)}
-  .burger[aria-expanded="true"] span::after{top:0; transform:rotate(-45deg)}
-  #menu{display:none; padding:4px 0 14px}
+  .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+  .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+  #menu{display:none;padding:4px 0 14px}
   #menu.open{display:block}
-  #menu a{display:block; padding:13px 2px; text-decoration:none; font-size:17px; border-bottom:1px solid var(--line)}
-  #menu a:last-child{border-bottom:0; color:var(--ember); font-weight:600}
-  @media (min-width:900px){
-    .burger{display:none}
-    #menu{display:flex !important; gap:20px; padding:0; align-items:center; order:2}
-    #menu a{border-bottom:0; padding:0; font-size:15px; color:var(--ink-soft)}
-    #menu a:hover{color:var(--ink)}
-    .topbar{flex-wrap:wrap}
-  }
+  #menu a{display:block;padding:13px 2px;text-decoration:none;font-size:17px;border-bottom:1px solid var(--line)}
+  #menu a:last-child{border-bottom:0;color:var(--ember);font-weight:600}
+  @media (min-width:900px){.burger{display:none} #menu{display:flex !important;gap:20px;padding:0;align-items:center} #menu a{border-bottom:0;padding:0;font-size:15px;color:var(--ink-soft)} #menu a:hover{color:var(--ink)}}
 
-  .hero{background:var(--iron); color:var(--on-iron); padding:56px 0 52px}
-  .hero h1{font-size:clamp(34px, 6.2vw, 58px); max-width:16ch}
-  .hero p.lead{margin-top:20px; font-size:20px; color:var(--on-iron-soft); max-width:48ch}
-  .cta{display:inline-block; margin-top:28px; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:15px 24px; border-radius:8px; font-size:17px}
+  .hero{background:var(--iron);color:var(--on-iron);padding:56px 0 52px}
+  .hero h1{font-size:clamp(34px,6.2vw,58px);max-width:16ch}
+  .hero p.lead{margin-top:20px;font-size:20px;color:var(--on-iron-soft);max-width:48ch}
+  .cta{display:inline-block;margin-top:26px;background:var(--ember);color:var(--ember-ink);text-decoration:none;font-weight:600;padding:15px 24px;border-radius:8px;font-size:17px}
   .cta:hover{filter:brightness(1.07)}
-  .hero .meta{margin-top:16px; font-size:15px; color:var(--on-iron-soft)}
+  .hero .meta{margin-top:16px;font-size:15px;color:var(--on-iron-soft)}
 
-  section{padding:54px 0; scroll-margin-top:110px}
+  section{padding:54px 0;scroll-margin-top:110px}
   section + section{border-top:1px solid var(--line)}
-  h2{font-size:clamp(27px, 4.4vw, 37px); max-width:24ch}
-  .sub{margin-top:10px; color:var(--ink-soft); max-width:60ch}
+  h2{font-size:clamp(27px,4.4vw,37px);max-width:24ch}
+  .sub{margin-top:10px;color:var(--ink-soft);max-width:60ch}
 
-  .fugas{margin-top:26px; display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-  .fuga{background:var(--paper); border:1px solid var(--line); border-inline-start:4px solid var(--ember); border-radius:10px; padding:20px}
-  .fuga h3{font-size:20px; margin-bottom:6px}
-  .fuga p{color:var(--ink-soft); font-size:15px}
+  .fugas{margin-top:26px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+  .fuga{background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--ember);border-radius:10px;padding:20px}
+  .fuga h3{font-size:20px;margin-bottom:6px}
+  .fuga p{color:var(--ink-soft);font-size:15px}
 
-  .mitades{margin-top:28px; display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-  .mitad{background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px}
+  .mitades{margin-top:28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .mitad{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px}
   .mitad h3{font-size:23px}
-  .mitad .rol{margin-top:4px; color:var(--ember); font-weight:600; font-size:14px}
-  .mitad ul{margin:14px 0 0; padding-inline-start:20px; color:var(--ink-soft)}
+  .mitad .rol{margin-top:4px;color:var(--ember);font-weight:600;font-size:14px}
+  .mitad ul{margin:14px 0 0;padding-inline-start:20px;color:var(--ink-soft)}
   .mitad ul li{margin-bottom:5px}
 
-  .charla{margin-top:26px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px}
-  .charla .b{max-width:82%; padding:11px 14px; border-radius:14px; font-size:15px; margin-bottom:9px; line-height:1.45}
-  .charla .cliente{background:var(--bg); border:1px solid var(--line); border-end-end-radius:5px; margin-inline-start:auto}
-  .charla .agente{background:var(--iron); color:var(--on-iron); border-end-start-radius:5px}
-  .charla .pie{margin-top:12px; font-size:14px; color:var(--ink-soft)}
+  .charla{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .charla .b{max-width:82%;padding:11px 14px;border-radius:14px;font-size:15px;margin-bottom:9px;line-height:1.45}
+  .charla .cliente{background:var(--bg);border:1px solid var(--line);border-end-end-radius:5px;margin-inline-start:auto}
+  .charla .agente{background:var(--iron);color:var(--on-iron);border-end-start-radius:5px}
+  .charla .pie{margin-top:12px;font-size:14px;color:var(--ink-soft)}
 
-  ol.steps{list-style:none; padding:0; margin:26px 0 0; border-top:1px solid var(--line)}
-  ol.steps li{display:grid; grid-template-columns:62px 1fr; gap:14px; padding:19px 0; border-bottom:1px solid var(--line)}
-  ol.steps .n{font-family:"Fraunces",Georgia,serif; font-size:33px; color:var(--ember); line-height:1}
-  ol.steps strong{display:block; font-weight:600}
+  ol.steps{list-style:none;padding:0;margin:26px 0 0;border-top:1px solid var(--line)}
+  ol.steps li{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:19px 0;border-bottom:1px solid var(--line)}
+  ol.steps .n{font-family:"Fraunces",Georgia,serif;font-size:33px;color:var(--ember);line-height:1}
+  ol.steps strong{display:block;font-weight:600}
   ol.steps span{color:var(--ink-soft)}
 
-  .sectores{margin-top:22px; display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-  .sector{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:16px 18px}
-  .sector strong{display:block; font-weight:600}
-  .sector span{color:var(--ink-soft); font-size:15px}
+  .sectores{margin-top:22px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .sector{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .sector strong{display:block;font-weight:600}
+  .sector span{color:var(--ink-soft);font-size:15px}
 
-  .destacado{margin-top:26px; background:var(--iron); color:var(--on-iron); border-radius:16px; padding:28px; border:2px solid var(--ember)}
-  .destacado .etiqueta{display:inline-block; background:var(--ember); color:#fff; font-size:12px; font-weight:600; padding:4px 11px; border-radius:999px; margin-bottom:12px}
-  .destacado h3{font-size:27px; color:var(--on-iron)}
-  .destacado p{color:var(--on-iron-soft); margin-top:8px; max-width:52ch}
-  .destacado .cifras{margin-top:20px; display:flex; flex-wrap:wrap; gap:26px; align-items:baseline}
-  .destacado .precio{font-family:"Fraunces",Georgia,serif; font-size:32px}
-  .destacado .precio small{display:block; font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--on-iron-soft); margin-top:3px}
-  .tachado{text-decoration:line-through; color:var(--on-iron-soft); font-size:19px; margin-inline-end:8px}
-  .destacado .acc{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px}
-  .destacado .acc a{text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px}
-  .destacado .acc a.pri{background:var(--ember); color:#fff}
-  .destacado .acc a.sec{border:1px solid #454C53; color:var(--on-iron)}
+  .destacado{margin-top:26px;background:var(--iron);color:var(--on-iron);border-radius:16px;padding:28px}
+  .destacado .etiqueta{display:inline-block;background:var(--ember);color:#fff;font-size:12px;font-weight:600;padding:4px 11px;border-radius:999px;margin-bottom:12px}
+  .destacado h3{font-size:27px;color:var(--on-iron)}
+  .destacado p{color:var(--on-iron-soft);margin-top:8px;max-width:52ch}
+  .destacado .cifras{margin-top:20px;display:flex;flex-wrap:wrap;gap:26px;align-items:baseline}
+  .destacado .precio{font-family:"Fraunces",Georgia,serif;font-size:32px}
+  .destacado .precio small{display:block;font-family:"Instrument Sans",sans-serif;font-size:14px;color:var(--on-iron-soft);margin-top:3px}
+  .antes{text-decoration:line-through;color:var(--on-iron-soft);font-size:20px;margin-inline-end:8px}
+  .destacado .acc{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .destacado .acc a{text-decoration:none;font-weight:600;padding:13px 20px;border-radius:8px}
+  .destacado .acc a.pri{background:var(--ember);color:#fff}
+  .destacado .acc a.sec{border:1px solid #454C53;color:var(--on-iron)}
 
-  .pagos{margin-top:22px; display:grid; gap:12px}
-  .pago{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:20px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
-  .pago strong{display:block; font-weight:600; font-size:17px}
-  .pago p{color:var(--ink-soft); font-size:15px; margin-top:3px; max-width:46ch}
-  .pago .monto{font-family:"Fraunces",Georgia,serif; font-size:23px; margin-top:8px}
-  .pago .monto small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft)}
-  .pago .monto .tachado{color:var(--ink-soft); font-size:17px}
-  .pagar{display:inline-block; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap}
-  .pagar.suave{background:transparent; color:var(--ink); border:1px solid var(--line)}
+  .pagos{margin-top:22px;display:grid;gap:12px}
+  .pago{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+  .pago strong{display:block;font-weight:600;font-size:17px}
+  .pago p{color:var(--ink-soft);font-size:15px;margin-top:3px;max-width:46ch}
+  .pago .monto{font-family:"Fraunces",Georgia,serif;font-size:23px;margin-top:8px}
+  .pago .monto small{font-family:"Instrument Sans",sans-serif;font-size:14px;color:var(--ink-soft)}
+  .pagar{display:inline-block;background:var(--ember);color:var(--ember-ink);text-decoration:none;font-weight:600;padding:13px 20px;border-radius:8px;white-space:nowrap}
+  .pagar.suave{background:transparent;color:var(--ink);border:1px solid var(--line)}
   .pagar:hover{filter:brightness(1.07)}
   @media (max-width:620px){.pago{grid-template-columns:1fr} .pagar{text-align:center}}
   .grupo{margin-top:30px}
-  .grupo > h3{font-size:21px; margin-bottom:3px}
-  .grupo > p{color:var(--ink-soft); font-size:15px}
-  .segura{margin-top:20px; font-size:14px; color:var(--ink-soft)}
+  .grupo > h3{font-size:21px;margin-bottom:3px}
+  .grupo > p{color:var(--ink-soft);font-size:15px}
+  .segura{margin-top:20px;font-size:14px;color:var(--ink-soft)}
 
-  details{border-top:1px solid var(--line); padding:16px 0}
+  details{border-top:1px solid var(--line);padding:16px 0}
   details:last-of-type{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer; font-weight:600; list-style:none}
+  summary{cursor:pointer;font-weight:600;list-style:none}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+"; float:inline-end; color:var(--ember); font-weight:600}
-  details[open] summary::after{content:"\2212"}
-  details p{margin-top:10px; color:var(--ink-soft); max-width:62ch}
+  details p{margin-top:10px;color:var(--ink-soft);max-width:62ch}
 
-  .contacto{margin-top:20px; font-size:16px; color:var(--on-iron-soft)}
+  .contacto{margin-top:20px;font-size:16px;color:var(--on-iron-soft)}
   .contacto a{color:var(--on-iron)}
-  footer{padding:34px 0 100px; color:var(--ink-soft); font-size:14.5px}
+  footer{padding:34px 0 100px;color:var(--ink-soft);font-size:14.5px}
   footer a{text-decoration:none}
-  .final{background:var(--iron); color:var(--on-iron); padding:54px 0; scroll-margin-top:110px}
+  .final{background:var(--iron);color:var(--on-iron);padding:54px 0;scroll-margin-top:110px}
   .final h2{color:var(--on-iron)}
-  .final p{color:var(--on-iron-soft); margin-top:12px}
+  .final p{color:var(--on-iron-soft);margin-top:12px}
 </style>
 </head>
 <body>
 <a class="saltar" href="#contenido" data-i18n="saltar">Saltar al contenido</a>
-
-<div class="cinta" data-i18n="cinta"><b>Apertura:</b> 50 % de descuento en todos los proyectos hasta el 16 de marzo de 2027.</div>
+<div class="aviso"><span data-i18n="aviso">Apertura de Forja Labs: <strong>50 % de descuento</strong> en todos los paquetes hasta el 16 de marzo de 2027.</span></div>
 
 <header class="top">
   <div class="wrap">
@@ -178,19 +155,19 @@
         <svg viewBox="0 0 1080 1080" role="img" aria-label="Forja Labs"><path class="f" d="M293 283a28 28 0 0 1 28-28h326a28 28 0 0 1 28 28v67a28 28 0 0 1-28 28H420v351a28 28 0 0 1-28 28h-71a28 28 0 0 1-28-28z"/><rect class="bar" x="293" y="478" width="254" height="114" rx="26"/><path class="spark" d="M712 526q14 90 100 104-86 14-100 104-14-90-100-104 86-14 100-104z"/></svg>
         Forja Labs
       </a>
-      <div class="herramientas">
-        <span id="caja-idioma"></span>
+      <div class="derecha">
+        <select id="idioma" aria-label="Idioma / Language"></select>
         <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menú"><span></span></button>
       </div>
-      <nav id="menu" aria-label="Principal">
-        <a href="#problema" data-i18n="nav1">El problema</a>
-        <a href="#solucion" data-i18n="nav2">Qué entregamos</a>
-        <a href="#negocios" data-i18n="nav3">Para quién</a>
-        <a href="#proceso" data-i18n="nav4">Cómo funciona</a>
-        <a href="#preguntas" data-i18n="nav5">Preguntas</a>
-        <a href="#contratar" data-i18n="nav6">Contratar</a>
-      </nav>
     </div>
+    <nav id="menu" aria-label="Principal">
+      <a href="#problema" data-i18n="nav1">El problema</a>
+      <a href="#solucion" data-i18n="nav2">Qué entregamos</a>
+      <a href="#negocios" data-i18n="nav3">Para quién</a>
+      <a href="#proceso" data-i18n="nav4">Cómo funciona</a>
+      <a href="#preguntas" data-i18n="nav5">Preguntas</a>
+      <a href="#contratar" data-i18n="nav6">Contratar</a>
+    </nav>
   </div>
 </header>
 
@@ -206,63 +183,42 @@
 <main id="contenido">
 <div class="wrap">
   <section id="problema">
-    <h2 data-i18n="s1_t">Las dos fugas de cualquier negocio</h2>
-    <p class="sub" data-i18n="s1_s">No importa si vende consultas, comida, casas, clases o refacciones. El dinero se escapa por los mismos dos lugares.</p>
+    <h2 data-i18n="p_t">Las dos fugas de cualquier negocio</h2>
+    <p class="sub" data-i18n="p_s">No importa si vende consultas, comida, casas, clases o refacciones. El dinero se escapa por los mismos dos lugares.</p>
     <div class="fugas">
-      <div class="fuga">
-        <h3 data-i18n="f1_t">El cliente quiere pagar y no puede</h3>
-        <p data-i18n="f1_p">Le piden precio por mensaje, usted contesta, manda su número de cuenta, el cliente lo piensa y se enfría. Cada paso de más entre la intención y el pago le cuesta ventas.</p>
-      </div>
-      <div class="fuga">
-        <h3 data-i18n="f2_t">El cliente escribe y nadie contesta</h3>
-        <p data-i18n="f2_p">Le escriben a las once de la noche, en domingo, o mientras usted atiende a otro. Quien no recibe respuesta en minutos le escribe al siguiente. Esa venta ya no vuelve.</p>
-      </div>
+      <div class="fuga"><h3 data-i18n="f1_t">El cliente quiere pagar y no puede</h3><p data-i18n="f1_d">Le piden precio por mensaje, usted contesta, manda su número de cuenta, el cliente lo piensa y se enfría. Cada paso de más entre la intención y el pago le cuesta ventas.</p></div>
+      <div class="fuga"><h3 data-i18n="f2_t">El cliente escribe y nadie contesta</h3><p data-i18n="f2_d">Le escriben a las once de la noche, en domingo, o mientras usted atiende a otro. Quien no recibe respuesta en minutos le escribe al siguiente. Esa venta ya no vuelve.</p></div>
     </div>
   </section>
 
   <section id="solucion">
-    <h2 data-i18n="s2_t">Lo que entregamos</h2>
-    <p class="sub" data-i18n="s2_s">Dos piezas que trabajan juntas: una vende cuando usted no está, la otra atiende cuando usted no puede.</p>
+    <h2 data-i18n="s_t">Lo que entregamos</h2>
+    <p class="sub" data-i18n="s_s">Dos piezas que trabajan juntas: una vende cuando usted no está, la otra atiende cuando usted no puede.</p>
     <div class="mitades">
       <div class="mitad">
         <h3 data-i18n="m1_t">La página</h3>
         <p class="rol" data-i18n="m1_r">Vende y cobra</p>
-        <ul data-i18n="m1_l">
-          <li>Una sola pantalla, clara y rápida en el teléfono de sus clientes</li>
-          <li>Sus servicios y precios escritos para vender, no solo para informar</li>
-          <li>Cobro con tarjeta, transferencia y OXXO vía Stripe, a su propia cuenta</li>
-          <li>Agenda o formulario, con aviso a su WhatsApp</li>
-          <li>Dominio y hospedaje a su nombre, sin cuotas ocultas</li>
-          <li>Manual para que usted cambie textos, precios y fotos</li>
-        </ul>
+        <ul data-i18n="m1_l"><li>Una sola pantalla, clara y rápida en el teléfono de sus clientes</li><li>Sus servicios y precios escritos para vender, no solo para informar</li><li>Cobro con tarjeta, transferencia y OXXO vía Stripe, a su propia cuenta</li><li>Agenda o formulario, con aviso a su WhatsApp</li><li>Dominio y hospedaje a su nombre, sin cuotas ocultas</li><li>Manual para que usted cambie textos, precios y fotos</li></ul>
       </div>
       <div class="mitad">
         <h3 data-i18n="m2_t">El agente de IA</h3>
         <p class="rol" data-i18n="m2_r">Atiende y agenda</p>
-        <ul data-i18n="m2_l">
-          <li>Contesta en WhatsApp y en su página, las 24 horas</li>
-          <li>Responde precios, horarios, ubicación y las preguntas de siempre</li>
-          <li>Agenda citas y las manda a su calendario</li>
-          <li>Captura nombre, teléfono y qué necesita cada persona</li>
-          <li>Le pasa la conversación en cuanto el caso lo amerita</li>
-          <li>Panel para ver conversaciones, citas y contactos nuevos</li>
-        </ul>
+        <ul data-i18n="m2_l"><li>Contesta en WhatsApp y en su página, las 24 horas</li><li>Responde precios, horarios, ubicación y las preguntas de siempre</li><li>Agenda citas y las manda a su calendario</li><li>Captura nombre, teléfono y qué necesita cada persona</li><li>Le pasa la conversación en cuanto el caso lo amerita</li><li>Panel para ver conversaciones, citas y contactos nuevos</li></ul>
       </div>
     </div>
-
     <div class="charla">
       <div class="b cliente" data-i18n="ch1">Hola, ¿cuánto cuesta y tienen para el sábado?</div>
       <div class="b agente" data-i18n="ch2">Buenas noches. El servicio cuesta $850 e incluye valoración. El sábado tengo libre 10:00 y 13:30. ¿Le aparto alguno?</div>
       <div class="b cliente" data-i18n="ch3">El de las 10, por favor.</div>
-      <div class="b agente" data-i18n="ch4">Listo. ¿Me confirma su nombre y teléfono? Le mando el recordatorio y la liga para apartar en línea si prefiere dejarlo pagado.</div>
-      <p class="pie" data-i18n="ch5">Una conversación de las 11 de la noche de un sábado, atendida sin que usted tocara el teléfono.</p>
+      <div class="b agente" data-i18n="ch4">Listo. ¿Me confirma su nombre y teléfono? Le mando el recordatorio y la liga para dejarlo pagado si prefiere.</div>
+      <p class="pie" data-i18n="ch_pie">Una conversación de las 11 de la noche de un sábado, atendida sin que usted tocara el teléfono.</p>
     </div>
   </section>
 
   <section id="negocios">
-    <h2 data-i18n="s3_t">Funciona en cualquier giro</h2>
-    <p class="sub" data-i18n="s3_s">Lo que cambia es qué vende y qué preguntas le hacen. La estructura es la misma.</p>
-    <div class="sectores" data-i18n="s3_l">
+    <h2 data-i18n="n_t">Funciona en cualquier giro</h2>
+    <p class="sub" data-i18n="n_s">Lo que cambia es qué vende y qué preguntas le hacen. La estructura es la misma.</p>
+    <div class="sectores" data-i18n="n_l">
       <div class="sector"><strong>Consultorios y clínicas</strong><span>Citas apartadas y pagadas; el agente filtra urgencias.</span></div>
       <div class="sector"><strong>Restaurantes y cafeterías</strong><span>Menú, reservas y pedidos sin saturar el teléfono.</span></div>
       <div class="sector"><strong>Inmobiliarias</strong><span>Fichas de propiedades y visitas agendadas al instante.</span></div>
@@ -276,9 +232,9 @@
   </section>
 
   <section id="proceso">
-    <h2 data-i18n="s4_t">Cómo funciona</h2>
-    <p class="sub" data-i18n="s4_s">Tres semanas de principio a fin. Usted decide y aprueba; nosotros construimos.</p>
-    <ol class="steps" data-i18n="s4_l">
+    <h2 data-i18n="pr_t">Cómo funciona</h2>
+    <p class="sub" data-i18n="pr_s">Tres semanas de principio a fin. Usted decide y aprueba; nosotros construimos.</p>
+    <ol class="steps" data-i18n="pr_l">
       <li><span class="n">1</span><div><strong>Llamada de 30 minutos</strong><span>Entendemos qué vende, qué le preguntan sus clientes y dónde se le atora el dinero hoy.</span></div></li>
       <li><span class="n">2</span><div><strong>Propuesta en 48 horas</strong><span>Le mostramos el diseño en su teléfono y la lista de preguntas que responderá el agente, con fecha por escrito.</span></div></li>
       <li><span class="n">3</span><div><strong>Construcción y entrenamiento</strong><span>Armamos la página, conectamos los pagos y entrenamos al agente con la información real de su negocio.</span></div></li>
@@ -288,96 +244,82 @@
   </section>
 
   <section id="contratar">
-    <h2 data-i18n="s5_t">Precios de apertura</h2>
-    <p class="sub" data-i18n="s5_s">Forja Labs abre sus puertas y los primeros seis meses todos los proyectos llevan 50 % de descuento, hasta el 16 de marzo de 2027. El servicio mensual del agente no cambia, porque cubre el costo real de operarlo.</p>
+    <h2 data-i18n="c_t">Precios de apertura</h2>
+    <p class="sub" data-i18n="c_s">Forja Labs abre sus puertas y durante seis meses todos los paquetes cuestan la mitad. El descuento aplica a la construcción; el servicio mensual del agente cubre costos reales y no cambia. La campaña termina el 16 de marzo de 2027.</p>
 
     <div class="destacado">
-      <span class="etiqueta" data-i18n="d_eti">Precio de apertura</span>
+      <span class="etiqueta" data-i18n="d_e">Apertura · 50 % de descuento</span>
       <h3 data-i18n="d_t">Vender y Atender</h3>
-      <p data-i18n="d_p">La página que cobra más el agente que contesta, trabajando juntos.</p>
+      <p data-i18n="d_d">La página que cobra más el agente que contesta, trabajando juntos. Es lo que recomendamos para casi todos los negocios.</p>
       <div class="cifras">
-        <div class="precio"><span class="tachado">$28,000</span>$14,000 MXN<small data-i18n="d_c1">Pago único · 50 % al iniciar</small></div>
-        <div class="precio">$2,500 MXN<small data-i18n="d_c2">Servicio mensual del agente</small></div>
-        <div class="precio" data-i18n="d_c3">3 semanas<small>Tiempo de entrega</small></div>
+        <div class="precio"><span class="antes">$28,000</span>$14,000 MXN<small data-i18n="d_p1">Pago único · 50 % al iniciar</small></div>
+        <div class="precio">$2,500 MXN<small data-i18n="d_p2">Servicio mensual del agente</small></div>
+        <div class="precio" data-i18n="d_p3">3 semanas<small>Tiempo de entrega</small></div>
       </div>
       <div class="acc">
-        <a class="pri" href="https://buy.stripe.com/4gMbJ21Bm3v2dfna8JgEg0E" data-i18n="d_b1">Pagar anticipo de $7,000</a>
-        <a class="sec" id="cta3" href="https://wa.me/523223102049" data-i18n="d_b2">Hablar antes</a>
+        <a class="pri" href="https://buy.stripe.com/3cIaEY5RC4z6dfn2GhgEg0M" data-i18n="d_b1">Pagar anticipo de $7,000</a>
+        <a class="sec" href="https://buy.stripe.com/7sY3cw1Bmd5C8Z73KlgEg0N" data-i18n="d_b2">Pagar completo $14,000</a>
+        <a class="sec" id="cta3" href="https://wa.me/523223102049" data-i18n="d_b3">Hablar antes</a>
       </div>
     </div>
 
     <div class="grupo">
       <h3 data-i18n="g1_t">Solo la página</h3>
-      <p data-i18n="g1_p">Si por ahora solo necesita vender en línea. Entrega en 10 días.</p>
+      <p data-i18n="g1_d">Si por ahora solo necesita vender en línea. Entrega en 10 días.</p>
       <div class="pagos">
-        <div class="pago">
-          <div><strong data-i18n="g1_a">Anticipo del 50 %</strong><p data-i18n="g1_b">El resto se paga al entregar.</p><div class="monto"><span class="tachado">$6,000</span>$3,000 MXN <small data-i18n="g1_c">de $6,000 en total</small></div></div>
-          <a class="pagar" href="https://buy.stripe.com/14A3cweo82qYcbj4OpgEg0F" data-i18n="btn_ant">Pagar anticipo</a>
-        </div>
-        <div class="pago">
-          <div><strong data-i18n="g1_d">Mantenimiento mensual</strong><p data-i18n="g1_e">Opcional: cambios de contenido, respaldos y soporte.</p><div class="monto">$900 MXN <small data-i18n="al_mes">al mes</small></div></div>
-          <a class="pagar suave" href="https://buy.stripe.com/bJedRabbW1mUa3b2GhgEg0q" data-i18n="btn_sus">Suscribirme</a>
-        </div>
+        <div class="pago"><div><strong data-i18n="g1_a">Anticipo del 50 %</strong><p data-i18n="g1_p">El resto se paga al entregar.</p><div class="monto">$3,000 MXN <small data-i18n="g1_m">de $6,000 en total, antes $12,000</small></div></div><a class="pagar" href="https://buy.stripe.com/00w14o5RCfdK0sB4OpgEg0K" data-i18n="btn_ant">Pagar anticipo</a></div>
+        <div class="pago"><div><strong data-i18n="g1_b">Mantenimiento mensual</strong><p data-i18n="g1_q">Opcional: cambios de contenido, respaldos y soporte.</p><div class="monto">$900 MXN <small data-i18n="almes">al mes</small></div></div><a class="pagar suave" href="https://buy.stripe.com/bJedRabbW1mUa3b2GhgEg0q" data-i18n="btn_sus">Suscribirme</a></div>
       </div>
     </div>
 
     <div class="grupo">
       <h3 data-i18n="g2_t">Solo el agente</h3>
-      <p data-i18n="g2_p">Si ya tiene página y lo que le falta es contestar. Entrega en 2 semanas.</p>
+      <p data-i18n="g2_d">Si ya tiene página y lo que le falta es contestar. Entrega en 2 semanas.</p>
       <div class="pagos">
-        <div class="pago">
-          <div><strong data-i18n="g1_a">Anticipo del 50 %</strong><p data-i18n="g2_b">Levantamos las preguntas de su negocio y entrenamos al agente.</p><div class="monto"><span class="tachado">$10,000</span>$5,000 MXN <small data-i18n="g2_c">de $10,000 en total</small></div></div>
-          <a class="pagar" href="https://buy.stripe.com/3cIbJ24Nyd5CdfneoZgEg0D" data-i18n="btn_ant">Pagar anticipo</a>
-        </div>
-        <div class="pago">
-          <div><strong data-i18n="g2_d">Servicio mensual</strong><p data-i18n="g2_e">Hospedaje, consumo de IA, ajustes y soporte. Necesario para que el agente opere.</p><div class="monto">$2,500 MXN <small data-i18n="al_mes">al mes</small></div></div>
-          <a class="pagar suave" href="https://buy.stripe.com/fZu28s6VG9TqfnveoZgEg0u" data-i18n="btn_sus">Suscribirme</a>
-        </div>
+        <div class="pago"><div><strong data-i18n="g1_a2">Anticipo del 50 %</strong><p data-i18n="g2_p">Levantamos las preguntas de su negocio y entrenamos al agente.</p><div class="monto">$5,000 MXN <small data-i18n="g2_m">de $10,000 en total, antes $20,000</small></div></div><a class="pagar" href="https://buy.stripe.com/dRm7sMcg0c1y1wF4OpgEg0L" data-i18n="btn_ant2">Pagar anticipo</a></div>
+        <div class="pago"><div><strong data-i18n="g2_b">Servicio mensual</strong><p data-i18n="g2_q">Hospedaje, consumo de IA, ajustes y soporte. Necesario para que el agente opere.</p><div class="monto">$2,500 MXN <small data-i18n="almes2">al mes</small></div></div><a class="pagar suave" href="https://buy.stripe.com/fZu28s6VG9TqfnveoZgEg0u" data-i18n="btn_sus2">Suscribirme</a></div>
       </div>
     </div>
 
     <div class="grupo">
       <h3 data-i18n="g3_t">¿Vende cursos o membresías?</h3>
-      <p data-i18n="g3_p">Hay una versión con área privada de alumnos y cobro recurrente, en 3 a 4 semanas.</p>
+      <p data-i18n="g3_d">Versión con área privada de alumnos y cobro recurrente. Apertura: $17,500 en lugar de $35,000, más $2,000 al mes.</p>
       <div class="pagos">
-        <div class="pago">
-          <div><strong data-i18n="g3_a">Plataforma de alumnos — anticipo</strong><p data-i18n="g3_b">Cursos, membresías, altas y bajas automáticas. Más $2,000 al mes.</p><div class="monto"><span class="tachado">$17,500</span>$8,750 MXN <small data-i18n="g3_c">de $17,500 en total</small></div></div>
-          <a class="pagar suave" href="https://buy.stripe.com/8x2eVe7ZKe9Gb7f5StgEg0C" data-i18n="btn_ant">Pagar anticipo</a>
-        </div>
+        <div class="pago"><div><strong data-i18n="g3_a">Plataforma de alumnos — anticipo</strong><p data-i18n="g3_p">Cursos, membresías, altas y bajas automáticas.</p><div class="monto">$8,750 MXN <small data-i18n="g3_m">de $17,500 en total, antes $35,000</small></div></div><a class="pagar suave" href="https://buy.stripe.com/5kQ4gAa7SghOejra8JgEg0O" data-i18n="btn_ant3">Pagar anticipo</a></div>
       </div>
     </div>
 
-    <p class="segura" data-i18n="s5_n">Precios en pesos mexicanos, ya con el descuento de apertura aplicado. Cubren lo descrito; si su proyecto pide más, se lo decimos antes de cobrar, no después. Las comisiones de Stripe se pagan directo a Stripe.</p>
+    <p class="segura" data-i18n="c_pie">Los precios son de partida y cubren lo descrito. Si su proyecto pide más, se lo decimos antes de cobrar, no después. Las comisiones de Stripe se pagan directo a Stripe.</p>
   </section>
 
   <section id="preguntas">
-    <h2 data-i18n="s6_t">Preguntas frecuentes</h2>
-    <div style="margin-top:20px" data-i18n="s6_l">
-      <details><summary>¿Por qué el 50 % de descuento?</summary><p>Porque Forja Labs acaba de abrir y preferimos construir una cartera de clientes satisfechos antes que cobrar de más desde el primer día. El descuento vence el 16 de marzo de 2027 y el precio queda fijo para quien contrate antes.</p></details>
+    <h2 data-i18n="q_t">Preguntas frecuentes</h2>
+    <div style="margin-top:20px" data-i18n="q_l">
+      <details><summary>¿El descuento es real?</summary><p>Sí. Forja Labs abre y prefiere llenar su agenda con clientes reales antes que con precios de lista. La mitad de precio aplica a la construcción, no al servicio mensual, y termina el 16 de marzo de 2027.</p></details>
       <details><summary>¿Mi negocio es muy pequeño para esto?</summary><p>Si ya tiene clientes que le escriben, no lo es. Entre más chico el equipo, más pesa cada mensaje sin contestar y cada cobro que se enfría.</p></details>
       <details><summary>¿Necesito saber de tecnología?</summary><p>No. Usted cuenta su negocio y aprueba lo que le mostramos. Nosotros hacemos el resto y le entregamos un manual sencillo.</p></details>
       <details><summary>¿A dónde llega el dinero de mis clientes?</summary><p>A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
       <details><summary>¿El agente puede inventarse cosas?</summary><p>Se entrena con la información real de su negocio y con instrucciones explícitas de qué no debe responder. Cuando no sabe algo, lo dice y le pasa la conversación. Usted aprueba las respuestas antes de que salga al aire.</p></details>
-      <details><summary>¿El agente va a espantar a mis clientes?</summary><p>Se presenta como asistente, no finge ser usted, y entrega la conversación en cuanto hay un caso delicado. La alternativa real no es usted contestando al instante: es nadie contestando.</p></details>
+      <details><summary>¿El agente va a espantar a mis clientes?</summary><p>Se presenta como asistente, no finge ser usted, y entrega la conversación en cuanto hay una queja o una negociación. La alternativa real no es usted contestando al instante: es nadie contestando.</p></details>
       <details><summary>¿Por qué el agente tiene mensualidad y la página no?</summary><p>Porque cada conversación consume IA y hospedaje que se pagan mes con mes. La página, una vez entregada, no consume nada: su mantenimiento es opcional.</p></details>
-      <details><summary>¿Trabajan fuera de México?</summary><p>Sí. Trabajamos a distancia y cobramos en pesos mexicanos; su banco hace la conversión. La página y el agente pueden entregarse en el idioma que necesite su clientela.</p></details>
-      <details><summary>¿Qué pasa si no me gusta lo que ven?</summary><p>Lo ve antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 % y ahí termina el compromiso.</p></details>
+      <details><summary>¿Qué pasa si no me gusta lo que veo?</summary><p>Lo ve antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 % y ahí termina el compromiso.</p></details>
+      <details><summary>¿Emiten factura?</summary><p>Sí. Indíquelo al contratar y le pedimos sus datos fiscales.</p></details>
     </div>
   </section>
 </div>
 
 <div class="final" id="contacto">
   <div class="wrap">
-    <h2 data-i18n="s7_t">Cuénteme de su negocio.</h2>
-    <p data-i18n="s7_p">Un mensaje basta. Le respondo el mismo día y le digo qué le conviene, aunque la respuesta sea que todavía no necesita nada.</p>
-    <a class="cta" id="cta2" href="https://wa.me/523223102049" data-i18n="cta_fin">Escribir por WhatsApp</a>
-    <p class="contacto" data-i18n="s7_c">O por correo: <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · WhatsApp 322 310 2049</p>
+    <h2 data-i18n="fin_t">Cuénteme de su negocio.</h2>
+    <p data-i18n="fin_d">Un mensaje basta. Le respondo el mismo día y le digo qué le conviene, aunque la respuesta sea que todavía no necesita nada.</p>
+    <a class="cta" id="cta2" href="https://wa.me/523223102049" data-i18n="fin_b">Escribir por WhatsApp</a>
+    <p class="contacto">O por correo: <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · WhatsApp 322 310 2049</p>
   </div>
 </div>
 </main>
 
 <div class="wrap">
-  <footer data-i18n="pie">Forja Labs · Desarrollo web, pagos y automatización con IA · México · <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · <a href="/privacidad.html">Aviso de privacidad</a></footer>
+  <footer>Forja Labs · <span data-i18n="pie">Desarrollo web, pagos y automatización con IA · México</span> · <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · <a href="/privacidad.html" data-i18n="pie_p">Aviso de privacidad</a></footer>
 </div>
 
 <script>
@@ -385,18 +327,14 @@
   var texto = "Hola, vi la página de Forja Labs y me interesa el precio de apertura. Mi negocio es: ";
   var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
   ['cta1','cta2','cta3'].forEach(function(id){ var e = document.getElementById(id); if (e) e.href = url; });
-
   var burger = document.getElementById('burger'), menu = document.getElementById('menu');
   burger.addEventListener('click', function(){
-    var abierto = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!abierto));
-    menu.classList.toggle('open', !abierto);
+    var a = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!a));
+    menu.classList.toggle('open', !a);
   });
   menu.addEventListener('click', function(e){
-    if (e.target.tagName === 'A' && window.innerWidth < 900) {
-      menu.classList.remove('open');
-      burger.setAttribute('aria-expanded','false');
-    }
+    if (e.target.tagName === 'A' && window.innerWidth < 900) { menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
   });
 </script>
 <script src="/i18n.js" defer></script>
