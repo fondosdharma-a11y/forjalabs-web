@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prospectos — Forja Labs</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#14181C;--paper:#1C2126;--ink:#F2F0EC;--ink-soft:#A3ABB3;--line:#2C333A;--ember:#FF5722;--spark:#FFC845}
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Instrument Sans",-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+  .wrap{max-width:780px;margin:0 auto;padding:26px 18px 80px}
+  h1{font-family:"Fraunces",Georgia,serif;font-size:27px;margin:0 0 4px}
+  .sub{color:var(--ink-soft);font-size:14.5px}
+  .caja{margin-top:20px;display:flex;gap:8px}
+  input{flex:1;min-width:0;background:var(--paper);color:inherit;border:1px solid var(--line);border-radius:9px;padding:12px;font:16px inherit}
+  button{background:var(--ember);border:0;color:#fff;border-radius:9px;padding:0 18px;font:600 15px inherit;cursor:pointer}
+  button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--spark);outline-offset:2px}
+  .estado{margin-top:14px;font-size:14.5px;color:var(--ink-soft)}
+  .lead{margin-top:12px;background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--ember);border-radius:12px;padding:16px}
+  .lead b{font-size:17px}
+  .lead .meta{color:var(--ink-soft);font-size:13.5px;margin-top:2px}
+  .lead .msg{margin-top:9px;font-size:15px}
+  .lead .acc{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .lead .acc a{text-decoration:none;font-size:14px;font-weight:600;padding:9px 13px;border-radius:8px;background:var(--ember);color:#fff}
+  .lead .acc a.sec{background:none;border:1px solid var(--line);color:var(--ink)}
+  .vacio{margin-top:24px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Prospectos</h1>
+  <p class="sub">Quien dejó sus datos en el formulario de forjalabs.org. Solo usted ve esto.</p>
+  <div class="caja">
+    <input id="token" type="password" placeholder="Clave del panel" autocomplete="current-password" aria-label="Clave del panel">
+    <button type="button" id="ver">Ver</button>
+  </div>
+  <p class="estado" id="estado"></p>
+  <div id="lista"></div>
+</div>
+<script>
+var est = document.getElementById("estado"), lista = document.getElementById("lista"), campo = document.getElementById("token");
+function wa(t, texto){ var n = String(t).replace(/[^0-9]/g, ""); if (n.length === 10) n = "52" + n; return "https://wa.me/" + n + "?text=" + encodeURIComponent(texto); }
+function pintar(d){
+  lista.innerHTML = "";
+  if (!d.leads.length){ lista.innerHTML = '<p class="vacio">Todav\u00eda no hay prospectos. El formulario est\u00e1 vivo y esperando.</p>'; return; }
+  est.textContent = d.total + " prospecto(s)";
+  d.leads.forEach(function(l){
+    var e = document.createElement("div"); e.className = "lead";
+    var f = new Date(l.fecha).toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "short" });
+    var esTel = /^[+0-9 ()-]{8,}$/.test(l.contacto);
+    var saludo = "Hola " + (l.nombre.split(" ")[0] || "") + ", soy JP de Forja Labs. Vi que dej\u00f3 sus datos en la p\u00e1gina. \u00bfLe marco o prefiere que le escriba por aqu\u00ed?";
+    e.innerHTML = "<b></b><div class='meta'></div><div class='msg'></div><div class='acc'></div>";
+    e.querySelector("b").textContent = l.nombre;
+    e.querySelector(".meta").textContent = f + (l.giro ? " · " + l.giro : "") + (l.pais ? " · " + l.pais : "") + " · " + l.contacto;
+    e.querySelector(".msg").textContent = l.mensaje || "";
+    var acc = e.querySelector(".acc");
+    if (esTel){ var a = document.createElement("a"); a.href = wa(l.contacto, saludo); a.textContent = "WhatsApp"; acc.appendChild(a); }
+    else { var a2 = document.createElement("a"); a2.href = "mailto:" + l.contacto; a2.textContent = "Correo"; acc.appendChild(a2); }
+    var c = document.createElement("a"); c.className = "sec"; c.href = "#"; c.textContent = "Copiar contacto";
+    c.addEventListener("click", function(ev){ ev.preventDefault(); navigator.clipboard.writeText(l.contacto); c.textContent = "Copiado"; });
+    acc.appendChild(c);
+    lista.appendChild(e);
+  });
+}
+function cargar(){
+  var t = campo.value.trim(); if (!t) return;
+  est.textContent = "Consultando…";
+  fetch("/api/leads?token=" + encodeURIComponent(t))
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.error){ est.textContent = "Clave incorrecta."; lista.innerHTML = ""; return; }
+      try { localStorage.setItem("forja-panel", t); } catch(e){}
+      pintar(d);
+    })
+    .catch(function(){ est.textContent = "No se pudo consultar. Intente de nuevo."; });
+}
+document.getElementById("ver").addEventListener("click", cargar);
+campo.addEventListener("keydown", function(e){ if (e.key === "Enter") cargar(); });
+try { var g = localStorage.getItem("forja-panel"); if (g){ campo.value = g; cargar(); } } catch(e){}
+</script>
+</body>
+</html>
