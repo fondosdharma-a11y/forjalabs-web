@@ -88,7 +88,7 @@
   .pq .cifras{margin-top:18px; padding-top:16px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:22px; align-items:baseline}
   .pq .precio{font-family:"Fraunces",Georgia,serif; font-size:30px}
   .pq .precio small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft); display:block; margin-top:2px}
-  .pq .link{margin-top:16px; display:inline-block; color:var(--ember); font-weight:600; text-decoration:none}
+  .pq .link{margin-top:16px; display:inline-block; color:var(--ember); font-weight:600; text-decoration:none; cursor:pointer}
 
   ol.steps{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:0; border-top:1px solid var(--line)}
   ol.steps li{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:20px 0; border-bottom:1px solid var(--line)}
@@ -122,7 +122,7 @@
 
   .contacto{margin-top:22px; font-size:16px; color:var(--on-iron-soft)}
   .contacto a{color:var(--on-iron)}
-  footer{padding:36px 0 48px; color:var(--ink-soft); font-size:15px}
+  footer{padding:36px 0 96px; color:var(--ink-soft); font-size:15px}
   footer a{text-decoration:none}
   .final{background:var(--iron); color:var(--on-iron); padding:56px 0; scroll-margin-top:72px}
   .final h2{color:var(--on-iron)}
@@ -161,7 +161,7 @@
 <div class="wrap">
   <section id="paquetes">
     <h2>Tres formas de trabajar con nosotros</h2>
-    <p class="sub">Cada una resuelve un cuello de botella distinto. Si no sabe cuál le toca, escríbanos y se lo decimos con honestidad, aunque la respuesta sea "todavía no necesita nada".</p>
+    <p class="sub">Cada una resuelve un cuello de botella distinto. Si no sabe cuál le toca, pregúntele al asistente de la esquina o escríbanos: se lo decimos con honestidad, aunque la respuesta sea "todavía no necesita nada".</p>
 
     <div class="paquetes">
       <div class="pq destacado">
@@ -179,7 +179,7 @@
           <div class="precio">Desde $12,000 MXN<small>Pago único · 50 % al iniciar</small></div>
           <div class="precio">10 días<small>Tiempo de entrega</small></div>
         </div>
-        <a class="link" href="#contratar">Contratar este paquete</a>
+        <a class="link" href="#contratar" data-chispa="Quiero cobrar en línea">Contratar este paquete</a>
       </div>
 
       <div class="pq">
@@ -198,7 +198,7 @@
           <div class="precio">$2,000 MXN<small>Mantenimiento al mes</small></div>
           <div class="precio">3–4 semanas<small>Tiempo de entrega</small></div>
         </div>
-        <a class="link" href="#contratar">Contratar este paquete</a>
+        <a class="link" href="#contratar" data-chispa="Vendo cursos o membresías">Contratar este paquete</a>
       </div>
 
       <div class="pq">
@@ -217,7 +217,7 @@
           <div class="precio">$2,500 MXN<small>Servicio al mes</small></div>
           <div class="precio">2–3 semanas<small>Tiempo de entrega</small></div>
         </div>
-        <a class="link" href="#contratar">Contratar este paquete</a>
+        <a class="link" href="#contratar" data-chispa="Pierdo clientes por no contestar">Contratar este paquete</a>
       </div>
     </div>
   </section>
@@ -346,5 +346,6 @@
     }
   });
 </script>
+<script src="/agente.js" defer></script>
 </body>
 </html>
