@@ -3,83 +3,181 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prospectos — Forja Labs</title>
+<title>Panel — Forja Labs</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#14181C;--paper:#1C2126;--ink:#F2F0EC;--ink-soft:#A3ABB3;--line:#2C333A;--ember:#FF5722;--spark:#FFC845}
+  :root{--bg:#14181C;--paper:#1C2126;--ink:#F2F0EC;--soft:#A3ABB3;--line:#2C333A;--ember:#FF5722;--spark:#FFC845}
   *{box-sizing:border-box} html,body{margin:0}
   body{background:var(--bg);color:var(--ink);font-family:"Instrument Sans",-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
-  .wrap{max-width:780px;margin:0 auto;padding:26px 18px 80px}
-  h1{font-family:"Fraunces",Georgia,serif;font-size:27px;margin:0 0 4px}
-  .sub{color:var(--ink-soft);font-size:14.5px}
-  .caja{margin-top:20px;display:flex;gap:8px}
-  input{flex:1;min-width:0;background:var(--paper);color:inherit;border:1px solid var(--line);border-radius:9px;padding:12px;font:16px inherit}
-  button{background:var(--ember);border:0;color:#fff;border-radius:9px;padding:0 18px;font:600 15px inherit;cursor:pointer}
-  button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--spark);outline-offset:2px}
-  .estado{margin-top:14px;font-size:14.5px;color:var(--ink-soft)}
-  .lead{margin-top:12px;background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--ember);border-radius:12px;padding:16px}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 90px}
+  h1{font-family:"Fraunces",Georgia,serif;font-size:26px;margin:0}
+  .sub{color:var(--soft);font-size:14px;margin-top:2px}
+  .caja{margin-top:18px;display:flex;gap:8px}
+  input,textarea{flex:1;min-width:0;background:var(--paper);color:inherit;border:1px solid var(--line);border-radius:9px;padding:12px;font:16px inherit}
+  textarea{min-height:150px;resize:vertical;width:100%}
+  button{background:var(--ember);border:0;color:#fff;border-radius:9px;padding:12px 18px;font:600 15px inherit;cursor:pointer}
+  button.sec{background:none;border:1px solid var(--line);color:var(--ink)}
+  button[disabled]{opacity:.5;cursor:default}
+  button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--spark);outline-offset:2px}
+  .tabs{display:flex;gap:8px;margin-top:22px;border-bottom:1px solid var(--line)}
+  .tabs button{background:none;color:var(--soft);border:0;border-bottom:3px solid transparent;border-radius:0;padding:12px 4px;margin-right:16px;font:600 15px inherit}
+  .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ember)}
+  .panel{display:none} .panel.activo{display:block}
+  .resumen{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .dato{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:120px}
+  .dato b{display:block;font-family:"Fraunces",Georgia,serif;font-size:28px}
+  .dato span{display:block;color:var(--soft);font-size:13px;margin-top:2px}
+  .dato.alerta{border-color:var(--ember)} .dato.alerta b{color:var(--ember)}
+  .estado{margin-top:14px;font-size:14px;color:var(--soft)}
+  .lead{margin-top:12px;background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--line);border-radius:12px;padding:16px}
+  .lead.urge{border-inline-start-color:var(--ember)}
+  .lead.listo{opacity:.55;border-inline-start-color:#3C8A57}
   .lead b{font-size:17px}
-  .lead .meta{color:var(--ink-soft);font-size:13.5px;margin-top:2px}
+  .lead .meta{color:var(--soft);font-size:13px;margin-top:2px}
   .lead .msg{margin-top:9px;font-size:15px}
   .lead .acc{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
   .lead .acc a{text-decoration:none;font-size:14px;font-weight:600;padding:9px 13px;border-radius:8px;background:var(--ember);color:#fff}
   .lead .acc a.sec{background:none;border:1px solid var(--line);color:var(--ink)}
-  .vacio{margin-top:24px;color:var(--ink-soft)}
+  .lead .acc button{padding:9px 13px;font-size:14px}
+  .vacio{margin-top:24px;color:var(--soft)}
+  .salida{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;white-space:pre-wrap;font-size:15px;display:none}
+  .salida.hay{display:block}
+  .pista{color:var(--soft);font-size:13.5px;margin-top:8px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Prospectos</h1>
-  <p class="sub">Quien dejó sus datos en el formulario de forjalabs.org. Solo usted ve esto.</p>
+  <h1>Panel de Forja Labs</h1>
+  <p class="sub">Prospectos y redacción de propuestas. Solo usted ve esto.</p>
+
   <div class="caja">
     <input id="token" type="password" placeholder="Clave del panel" autocomplete="current-password" aria-label="Clave del panel">
-    <button type="button" id="ver">Ver</button>
+    <button type="button" id="entrar">Entrar</button>
   </div>
   <p class="estado" id="estado"></p>
-  <div id="lista"></div>
+
+  <div class="tabs" role="tablist">
+    <button type="button" id="tab1" role="tab" aria-selected="true" aria-controls="p1">Prospectos</button>
+    <button type="button" id="tab2" role="tab" aria-selected="false" aria-controls="p2">Redactar propuesta</button>
+  </div>
+
+  <section class="panel activo" id="p1" role="tabpanel">
+    <div class="resumen" id="resumen"></div>
+    <div id="lista"></div>
+  </section>
+
+  <section class="panel" id="p2" role="tabpanel">
+    <p class="pista">Pegue aquí las notas crudas de la llamada: qué vende, qué le duele con sus palabras, qué paquete quiere. Entre más frases textuales del cliente, mejor sale.</p>
+    <textarea id="notas" placeholder="Dentista en Zapopan. Dice: 'me escriben a las 11 de la noche y cuando contesto ya agendaron en otro lado'. 15 mensajes al día, consulta 350. Quiere el paquete completo, va a pagar anticipo."></textarea>
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button type="button" id="redactar">Redactar</button>
+      <button type="button" class="sec" id="copiar">Copiar</button>
+    </div>
+    <p class="estado" id="estado2"></p>
+    <div class="salida" id="salida"></div>
+  </section>
 </div>
+
 <script>
-var est = document.getElementById("estado"), lista = document.getElementById("lista"), campo = document.getElementById("token");
+var est = document.getElementById("estado"), est2 = document.getElementById("estado2");
+var lista = document.getElementById("lista"), resumen = document.getElementById("resumen");
+var campo = document.getElementById("token");
+function clave(){ return campo.value.trim(); }
 function wa(t, texto){ var n = String(t).replace(/[^0-9]/g, ""); if (n.length === 10) n = "52" + n; return "https://wa.me/" + n + "?text=" + encodeURIComponent(texto); }
+function horas(f){ return Math.floor((Date.now() - Date.parse(f)) / 3600000); }
+
 function pintar(d){
+  resumen.innerHTML = "";
+  var datos = [[d.total, "prospectos", false], [d.pendientes, "sin contactar (+24 h)", d.pendientes > 0]];
+  datos.forEach(function(x){
+    var e = document.createElement("div");
+    e.className = "dato" + (x[2] ? " alerta" : "");
+    e.innerHTML = "<b></b><span></span>";
+    e.querySelector("b").textContent = x[0];
+    e.querySelector("span").textContent = x[1];
+    resumen.appendChild(e);
+  });
   lista.innerHTML = "";
   if (!d.leads.length){ lista.innerHTML = '<p class="vacio">Todav\u00eda no hay prospectos. El formulario est\u00e1 vivo y esperando.</p>'; return; }
-  est.textContent = d.total + " prospecto(s)";
   d.leads.forEach(function(l){
-    var e = document.createElement("div"); e.className = "lead";
+    var h = horas(l.fecha);
+    var e = document.createElement("div");
+    e.className = "lead" + (l.contactado ? " listo" : (h > 24 ? " urge" : ""));
     var f = new Date(l.fecha).toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "short" });
     var esTel = /^[+0-9 ()-]{8,}$/.test(l.contacto);
     var saludo = "Hola " + (l.nombre.split(" ")[0] || "") + ", soy JP de Forja Labs. Vi que dej\u00f3 sus datos en la p\u00e1gina. \u00bfLe marco o prefiere que le escriba por aqu\u00ed?";
     e.innerHTML = "<b></b><div class='meta'></div><div class='msg'></div><div class='acc'></div>";
     e.querySelector("b").textContent = l.nombre;
-    e.querySelector(".meta").textContent = f + (l.giro ? " · " + l.giro : "") + (l.pais ? " · " + l.pais : "") + " · " + l.contacto;
+    e.querySelector(".meta").textContent = f + " · hace " + h + " h" + (l.giro ? " · " + l.giro : "") + (l.pais ? " · " + l.pais : "") + " · " + l.contacto;
     e.querySelector(".msg").textContent = l.mensaje || "";
     var acc = e.querySelector(".acc");
-    if (esTel){ var a = document.createElement("a"); a.href = wa(l.contacto, saludo); a.textContent = "WhatsApp"; acc.appendChild(a); }
-    else { var a2 = document.createElement("a"); a2.href = "mailto:" + l.contacto; a2.textContent = "Correo"; acc.appendChild(a2); }
-    var c = document.createElement("a"); c.className = "sec"; c.href = "#"; c.textContent = "Copiar contacto";
-    c.addEventListener("click", function(ev){ ev.preventDefault(); navigator.clipboard.writeText(l.contacto); c.textContent = "Copiado"; });
-    acc.appendChild(c);
+    var a = document.createElement("a");
+    a.href = esTel ? wa(l.contacto, saludo) : "mailto:" + l.contacto;
+    a.textContent = esTel ? "WhatsApp" : "Correo";
+    acc.appendChild(a);
+    var m = document.createElement("button");
+    m.type = "button"; m.className = "sec";
+    m.textContent = l.contactado ? "Reabrir" : "Marcar contactado";
+    m.addEventListener("click", function(){
+      m.disabled = true;
+      fetch("/api/marcar?token=" + encodeURIComponent(clave()), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ clave: l.clave, contactado: !l.contactado }) })
+        .then(function(r){ return r.json(); })
+        .then(function(){ cargar(); })
+        .catch(function(){ m.disabled = false; });
+    });
+    acc.appendChild(m);
     lista.appendChild(e);
   });
 }
+
 function cargar(){
-  var t = campo.value.trim(); if (!t) return;
+  var t = clave(); if (!t) return;
   est.textContent = "Consultando…";
   fetch("/api/leads?token=" + encodeURIComponent(t))
     .then(function(r){ return r.json(); })
     .then(function(d){
-      if (d.error){ est.textContent = "Clave incorrecta."; lista.innerHTML = ""; return; }
+      if (d.error){ est.textContent = "Clave incorrecta."; lista.innerHTML = ""; resumen.innerHTML = ""; return; }
       try { localStorage.setItem("forja-panel", t); } catch(e){}
+      est.textContent = "";
       pintar(d);
     })
     .catch(function(){ est.textContent = "No se pudo consultar. Intente de nuevo."; });
 }
-document.getElementById("ver").addEventListener("click", cargar);
+
+document.getElementById("entrar").addEventListener("click", cargar);
 campo.addEventListener("keydown", function(e){ if (e.key === "Enter") cargar(); });
+
+var tabs = [document.getElementById("tab1"), document.getElementById("tab2")];
+var paneles = [document.getElementById("p1"), document.getElementById("p2")];
+tabs.forEach(function(t, i){
+  t.addEventListener("click", function(){
+    tabs.forEach(function(x, j){ x.setAttribute("aria-selected", String(i === j)); paneles[j].classList.toggle("activo", i === j); });
+  });
+});
+
+var salida = document.getElementById("salida");
+document.getElementById("redactar").addEventListener("click", function(){
+  var n = document.getElementById("notas").value.trim();
+  if (n.length < 20){ est2.textContent = "Escriba unas l\u00edneas m\u00e1s de contexto."; return; }
+  if (!clave()){ est2.textContent = "Primero ponga la clave del panel arriba."; return; }
+  est2.textContent = "Redactando…"; salida.classList.remove("hay");
+  fetch("/api/propuesta?token=" + encodeURIComponent(clave()), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ notas: n }) })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.propuesta){ salida.textContent = d.propuesta; salida.classList.add("hay"); est2.textContent = "Rev\u00edsela antes de enviarla."; }
+      else { est2.textContent = d.error === "falta la clave de IA" ? "Falta cargar la clave de IA en el servidor." : "No se pudo redactar."; }
+    })
+    .catch(function(){ est2.textContent = "No se pudo redactar."; });
+});
+document.getElementById("copiar").addEventListener("click", function(){
+  if (!salida.textContent) return;
+  navigator.clipboard.writeText(salida.textContent);
+  est2.textContent = "Copiada.";
+});
+
 try { var g = localStorage.getItem("forja-panel"); if (g){ campo.value = g; cargar(); } } catch(e){}
 </script>
 </body>
