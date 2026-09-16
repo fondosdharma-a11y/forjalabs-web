@@ -10,23 +10,25 @@
 <meta property="og:description" content="Página, pagos y agenda listos para recibir clientes. Precio fijo, entrega en 10 días.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://forjalabs.org/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath fill='%23D4571E' d='M4 22 L13 3 L22 22 L17 22 L13 13 L9 22 Z'/%3E%3C/svg%3E">
+<meta property="og:image" content="https://forjalabs.org/logo.svg">
+<link rel="icon" href="/logo.svg">
+<link rel="apple-touch-icon" href="/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#EEEFF1; --paper:#F8F8F7; --iron:#22272B; --ink:#15191D; --ink-soft:#586069; --line:#D3D7DC;
-    --ember:#D4571E; --ember-ink:#FFFFFF; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9; --header:rgba(238,239,241,.92);
+    --bg:#EEEFF1; --paper:#F8F8F7; --iron:#20262B; --ink:#15191D; --ink-soft:#586069; --line:#D3D7DC;
+    --ember:#FF5722; --ember-ink:#FFFFFF; --spark:#FFC845; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(238,239,241,.92);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#EDEFF1; --ink-soft:#A3ABB3; --line:#2C333A;
-      --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
+      --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#F2F0EC; --ink-soft:#A3ABB3; --line:#2C333A;
+      --ember:#FF5722; --ember-ink:#FFFFFF; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#EDEFF1; --ink-soft:#A3ABB3; --line:#2C333A;
-    --ember:#E86A2E; --ember-ink:#14181C; --on-iron:#EDEFF1; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
+    --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#F2F0EC; --ink-soft:#A3ABB3; --line:#2C333A;
+    --ember:#FF5722; --ember-ink:#FFFFFF; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.92);
   }
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -41,8 +43,10 @@
   .top{position:sticky; top:0; z-index:40; background:var(--header); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
   .topbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
   .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; text-decoration:none}
-  .brand svg{width:26px; height:26px}
-  .brand svg path{fill:var(--ember)}
+  .brand svg{width:30px; height:30px; display:block}
+  .brand .f{fill:var(--ink)}
+  .brand .bar{fill:var(--ember)}
+  .brand .spark{fill:var(--spark)}
   .burger{width:44px; height:44px; display:grid; place-items:center; background:none; border:1px solid var(--line); border-radius:10px; cursor:pointer; color:var(--ink)}
   .burger span{display:block; width:20px; height:2px; background:currentColor; position:relative; transition:transform .18s ease, background .18s ease}
   .burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:currentColor; transition:transform .18s ease, top .18s ease}
@@ -91,7 +95,6 @@
   .price ul{margin:0; padding-left:18px; color:var(--ink-soft)}
   @media (max-width:600px){.price{grid-template-columns:1fr}}
 
-  /* Contratar y pagar */
   .pagos{margin-top:28px; display:grid; gap:14px}
   .pago{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:22px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
   .pago h3{font-size:21px}
@@ -128,7 +131,7 @@
   <div class="wrap">
     <div class="topbar">
       <a class="brand" href="#">
-        <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 22 L13 3 L22 22 L17 22 L13 13 L9 22 Z"/></svg>
+        <svg viewBox="0 0 1080 1080" aria-hidden="true"><path class="f" d="M293 283a28 28 0 0 1 28-28h326a28 28 0 0 1 28 28v67a28 28 0 0 1-28 28H420v351a28 28 0 0 1-28 28h-71a28 28 0 0 1-28-28z"/><rect class="bar" x="293" y="478" width="254" height="114" rx="26"/><path class="spark" d="M712 526q14 90 100 104-86 14-100 104-14-90-100-104 86-14 100-104z"/></svg>
         Forja Labs
       </a>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span></button>
