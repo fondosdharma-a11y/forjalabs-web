@@ -111,7 +111,6 @@
   .fuga h3{font-size:20px; margin-bottom:6px}
   .fuga p{color:var(--ink-soft); font-size:15px}
 
-  /* Calculadora */
   .calc{margin-top:26px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:24px}
   .calc .campos{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
   .calc label{display:block; font-size:14.5px; font-weight:600; margin-bottom:8px}
@@ -140,7 +139,6 @@
   .probar p{color:var(--on-iron-soft); font-size:15px; margin-top:4px; max-width:46ch}
   .probar a{background:var(--spark); color:#20262B; text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap}
 
-  /* Caso real */
   .caso{margin-top:26px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:24px}
   .caso .etiqueta{display:inline-block; background:var(--iron); color:var(--on-iron); font-size:12px; font-weight:600; padding:4px 11px; border-radius:999px}
   .caso h3{font-size:23px; margin-top:12px}
@@ -200,7 +198,6 @@
   .grupo > p{color:var(--ink-soft); font-size:15px}
   .segura{margin-top:20px; font-size:14px; color:var(--ink-soft)}
 
-  /* Formulario */
   .form{margin-top:24px; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:24px}
   .form .campos{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
   .form label{display:block; font-size:14.5px; font-weight:600; margin-bottom:6px}
@@ -265,7 +262,7 @@
     <nav id="menu" aria-label="Principal">
       <a href="#problema" data-i18n="nav1">El problema</a>
       <a href="#solucion" data-i18n="nav2">Qué entregamos</a>
-      <a href="#caso" data-i18n="nav7">Caso real</a>
+      <a href="#caso" data-i18n="nav7">Lo que construimos</a>
       <a href="#negocios" data-i18n="nav3">Para quién</a>
       <a href="#proceso" data-i18n="nav4">Cómo funciona</a>
       <a href="#preguntas" data-i18n="nav5">Preguntas</a>
@@ -388,8 +385,8 @@
   </section>
 
   <section id="caso">
-    <h2 data-i18n="casoH">Un caso real</h2>
-    <p class="sub" data-i18n="casoS">El primer cliente de Forja Labs es un instituto de formación con alumnos en varios países.</p>
+    <h2 data-i18n="casoH">Lo que hemos construido</h2>
+    <p class="sub" data-i18n="casoS">Dos piezas reales, funcionando hoy: un cliente y un producto nuestro.</p>
     <div class="caso">
       <span class="etiqueta" data-i18n="casoE">CLIENTE · EDUCACIÓN</span>
       <h3 data-i18n="casoT">INISCH — Instituto Internacional del Sistema Código Holográfico</h3>
@@ -412,6 +409,34 @@
         </div>
       </div>
       <p class="pie" data-i18n="casoPie">Mismo equipo, mismas herramientas y el mismo proceso de cinco pasos que usaríamos con su negocio.</p>
+    </div>
+
+    <div class="caso" style="margin-top:16px">
+      <span class="etiqueta" style="background:var(--ember)" data-i18n="qE">PRODUCTO PROPIO · EN BETA</span>
+      <h3 data-i18n="qT">Quantify — Índice de Libertad</h3>
+      <p class="sub" style="margin-top:10px" data-i18n="qP">Una aplicación de finanzas personales que mide una sola cosa: qué porcentaje de sus gastos ya está cubierto por dinero que llega sin que usted trabaje. Cuando ese número llega a cien, su empleo deja de ser obligatorio.</p>
+      <div class="antes">
+        <div class="col">
+          <b data-i18n="qFuncL">Qué hace</b>
+          <ul>
+            <li data-i18n="qF1">Separa ingreso activo de pasivo y calcula el índice cada mes</li>
+            <li data-i18n="qF2">Compara estrategias de deuda: bola de nieve contra avalancha</li>
+            <li data-i18n="qF3">Simula decisiones antes de tomarlas, sin tocar los datos reales</li>
+            <li data-i18n="qF4">Presupuesto por categoría y proyección de años restantes</li>
+          </ul>
+        </div>
+        <div class="col">
+          <b data-i18n="qTecL">Cómo está hecha</b>
+          <ul>
+            <li data-i18n="qT1">Funciona sin cuenta y sin conexión; los datos viven en el teléfono</li>
+            <li data-i18n="qT2">Sin anuncios ni rastreadores</li>
+            <li data-i18n="qT3">Lectura de nueve redes de cripto, nunca la frase semilla</li>
+            <li data-i18n="qT4">Misma base para navegador y Android, desde un solo código</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie" data-i18n="qPie">La construimos nosotros, para nosotros. Está en beta: se usa desde el navegador y como app de prueba en Android, con las tiendas en revisión. Si quiere ver de qué somos capaces sin pedirle permiso a nadie, ábrala.</p>
+      <p class="pie"><a href="https://quantifycash.app" target="_blank" rel="noopener" style="color:var(--ember);font-weight:600">quantifycash.app</a></p>
     </div>
   </section>
 
@@ -628,7 +653,6 @@
     function calcular(){
       var m = +msg.value, t = +tic.value, p = +per.value;
       vMsg.textContent = m; vTic.textContent = dinero(t); vPer.textContent = p;
-      // De los que se enfrian, asumimos que solo 1 de cada 3 habria comprado
       var perdidosDia = m * (p / 10) / 3;
       var alAnio = perdidosDia * t * 313;
       anual.textContent = dinero(alAnio);
@@ -653,8 +677,8 @@
       ev.preventDefault();
       var dic = window.FORJA_DIC || {};
       var datos = {
-        nombre: f.nombre.value, contacto: f.contacto.value, giro: f.giro.value,
-        mensaje: f.mensaje.value, apellido2: f.apellido2.value,
+        nombre: f.elements.nombre.value, contacto: f.elements.contacto.value, giro: f.elements.giro.value,
+        mensaje: f.elements.mensaje.value, apellido2: f.elements.apellido2.value,
         origen: 'formulario', idioma: document.documentElement.lang || 'es'
       };
       if (!datos.nombre.trim() || !datos.contacto.trim()) return;
