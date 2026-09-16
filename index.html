@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Forja Labs — Una página que vende y un agente que atiende</title>
 <link rel="canonical" href="https://forjalabs.org/">
-<meta name="description" content="Forja Labs construye para cualquier negocio una página que cobra en línea y un agente de IA que atiende WhatsApp día y noche. Precio de apertura: 50 % de descuento.">
+<meta name="description" content="Apertura: 50 % de descuento por un mes en todos los servicios. Página con cobro en línea y agente de IA que atiende WhatsApp día y noche, para cualquier negocio.">
 <meta name="theme-color" content="#20262B">
-<meta property="og:title" content="Una página que vende. Un agente que atiende.">
-<meta property="og:description" content="Para cualquier negocio: página con cobro en línea y agente de IA en WhatsApp. Apertura con 50 % de descuento.">
+<meta property="og:title" content="Apertura: 50 % de descuento por un mes — Forja Labs">
+<meta property="og:description" content="Una página que vende y un agente que atiende. 50 % de descuento de apertura, 10 % extra pagando de contado.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://forjalabs.org/">
 <meta property="og:image" content="https://forjalabs.org/og.png">
@@ -24,129 +24,180 @@
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Forja Labs","url":"https://forjalabs.org/","logo":"https://forjalabs.org/logo.svg","image":"https://forjalabs.org/og.png","description":"Páginas con cobro en línea y agentes de IA que atienden WhatsApp, para cualquier negocio.","email":"hola@forjalabs.org","telephone":"+523223102049","areaServed":"MX","priceRange":"$$","address":{"@type":"PostalAddress","addressCountry":"MX"}}
 </script>
 <style>
-  :root{--bg:#EEEFF1;--paper:#F8F8F7;--iron:#20262B;--ink:#15191D;--ink-soft:#586069;--line:#D3D7DC;--ember:#FF5722;--ember-ink:#FFF;--spark:#FFC845;--on-iron:#F2F0EC;--on-iron-soft:#A9B1B9;--header:rgba(238,239,241,.93)}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14181C;--paper:#1C2126;--iron:#0F1215;--ink:#F2F0EC;--ink-soft:#A3ABB3;--line:#2C333A;--header:rgba(20,24,28,.93)}}
-  *{box-sizing:border-box} html,body{margin:0} html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-  body{background:var(--bg);color:var(--ink);font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  [dir="rtl"] body{font-family:"Instrument Sans","Noto Naskh Arabic",Tahoma,sans-serif}
-  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
-  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.015em;line-height:1.12;margin:0}
-  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{letter-spacing:0}
-  p{margin:0} a{color:inherit}
-  a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:4px}
-  .saltar{position:absolute;left:-9999px;background:var(--ember);color:#fff;padding:10px 16px;border-radius:8px}
-  .saltar:focus{left:12px;top:12px;z-index:60}
+  :root{
+    --bg:#EEEFF1; --paper:#F8F8F7; --iron:#20262B; --ink:#15191D; --ink-soft:#586069; --line:#D3D7DC;
+    --ember:#FF5722; --ember-ink:#FFFFFF; --spark:#FFC845; --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(238,239,241,.93);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181C; --paper:#1C2126; --iron:#0F1215; --ink:#F2F0EC; --ink-soft:#A3ABB3; --line:#2C333A;
+      --on-iron:#F2F0EC; --on-iron-soft:#A9B1B9; --header:rgba(20,24,28,.93);
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} .pulso{animation:none !important}}
+  body{background:var(--bg); color:var(--ink); font-family:"Instrument Sans",-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased}
+  [dir="rtl"] body{font-family:"Instrument Sans","Noto Sans Arabic",Tahoma,sans-serif}
+  .wrap{max-width:900px; margin:0 auto; padding:0 22px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.015em; line-height:1.12; margin:0}
+  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:"Instrument Sans",Tahoma,sans-serif}
+  p{margin:0}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--ember); outline-offset:3px; border-radius:4px}
+  .saltar{position:absolute; left:-9999px; background:var(--ember); color:#fff; padding:10px 16px; border-radius:8px}
+  .saltar:focus{left:12px; top:12px; z-index:60}
 
-  .aviso{background:var(--ember);color:#fff;text-align:center;padding:9px 16px;font-size:14.5px;font-weight:500}
-  .aviso a{color:#fff}
-  .top{position:sticky;top:0;z-index:40;background:var(--header);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .topbar{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:13px 0}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px;text-decoration:none}
-  .brand svg{width:30px;height:30px;display:block}
+  /* Cintillo de campaña */
+  .cintillo{background:var(--ember); color:#fff; text-align:center; padding:9px 16px; font-size:15px; font-weight:600; line-height:1.4}
+  .cintillo a{color:#fff; text-decoration:underline}
+  .cintillo .reloj{display:inline-block; background:rgba(0,0,0,.22); border-radius:6px; padding:1px 8px; margin-left:6px; font-variant-numeric:tabular-nums}
+
+  .top{position:sticky; top:0; z-index:40; background:var(--header); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .topbar{display:flex; align-items:center; gap:10px; justify-content:space-between; padding:13px 0}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; text-decoration:none}
+  .brand svg{width:30px; height:30px; display:block}
   .brand .f{fill:var(--ink)} .brand .bar{fill:var(--ember)} .brand .spark{fill:var(--spark)}
-  .derecha{display:flex;align-items:center;gap:10px}
-  #idioma{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:9px 10px;font:500 14px inherit;max-width:132px}
-  .burger{width:44px;height:44px;display:grid;place-items:center;background:none;border:1px solid var(--line);border-radius:10px;cursor:pointer;color:var(--ink)}
-  .burger span{display:block;width:20px;height:2px;background:currentColor;position:relative;transition:transform .18s ease,background .18s ease}
-  .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;transition:transform .18s ease,top .18s ease}
+  .derecha{display:flex; align-items:center; gap:9px}
+  #idioma{background:var(--paper); color:var(--ink); border:1px solid var(--line); border-radius:9px; padding:9px 10px; font:500 14px inherit; max-width:140px}
+  .burger{width:44px; height:44px; display:grid; place-items:center; background:none; border:1px solid var(--line); border-radius:10px; cursor:pointer; color:var(--ink); flex:none}
+  .burger span{display:block; width:20px; height:2px; background:currentColor; position:relative; transition:transform .18s ease, background .18s ease}
+  .burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:currentColor; transition:transform .18s ease, top .18s ease}
   .burger span::before{top:-6px} .burger span::after{top:6px}
   .burger[aria-expanded="true"] span{background:transparent}
-  .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
-  .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-  #menu{display:none;padding:4px 0 14px}
+  .burger[aria-expanded="true"] span::before{top:0; transform:rotate(45deg)}
+  .burger[aria-expanded="true"] span::after{top:0; transform:rotate(-45deg)}
+  #menu{display:none; padding:4px 0 14px}
   #menu.open{display:block}
-  #menu a{display:block;padding:13px 2px;text-decoration:none;font-size:17px;border-bottom:1px solid var(--line)}
-  #menu a:last-child{border-bottom:0;color:var(--ember);font-weight:600}
-  @media (min-width:900px){.burger{display:none} #menu{display:flex !important;gap:20px;padding:0;align-items:center} #menu a{border-bottom:0;padding:0;font-size:15px;color:var(--ink-soft)} #menu a:hover{color:var(--ink)}}
+  #menu a{display:block; padding:13px 2px; text-decoration:none; font-size:17px; border-bottom:1px solid var(--line)}
+  #menu a:last-child{border-bottom:0; color:var(--ember); font-weight:600}
+  @media (min-width:860px){
+    .burger{display:none}
+    #menu{display:flex !important; gap:20px; padding:0; align-items:center}
+    #menu a{border-bottom:0; padding:0; font-size:15px; color:var(--ink-soft)}
+    #menu a:hover{color:var(--ink)}
+  }
 
-  .hero{background:var(--iron);color:var(--on-iron);padding:56px 0 52px}
-  .hero h1{font-size:clamp(34px,6.2vw,58px);max-width:16ch}
-  .hero p.lead{margin-top:20px;font-size:20px;color:var(--on-iron-soft);max-width:48ch}
-  .cta{display:inline-block;margin-top:26px;background:var(--ember);color:var(--ember-ink);text-decoration:none;font-weight:600;padding:15px 24px;border-radius:8px;font-size:17px}
+  .hero{background:var(--iron); color:var(--on-iron); padding:52px 0 50px}
+  .hero h1{font-size:clamp(34px, 6.2vw, 58px); max-width:16ch}
+  .hero p.lead{margin-top:18px; font-size:20px; color:var(--on-iron-soft); max-width:48ch}
+  .cta{display:inline-block; margin-top:26px; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:15px 24px; border-radius:8px; font-size:17px}
   .cta:hover{filter:brightness(1.07)}
-  .hero .meta{margin-top:16px;font-size:15px;color:var(--on-iron-soft)}
+  .hero .meta{margin-top:14px; font-size:15px; color:var(--on-iron-soft)}
 
-  section{padding:54px 0;scroll-margin-top:110px}
+  /* Cartel de promoción */
+  .cartel{margin-top:30px; border:2px solid var(--ember); border-radius:16px; overflow:hidden; background:#171C21}
+  .cartel .banda{background:var(--ember); color:#fff; padding:10px 18px; font-weight:600; font-size:14px; display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center}
+  .cartel .cuerpo{padding:22px 18px 20px; text-align:center}
+  .cartel .cifra{font-family:"Fraunces",Georgia,serif; font-size:clamp(52px,14vw,86px); line-height:.95; color:var(--spark)}
+  .cartel .cifra span{font-size:.42em; vertical-align:super; margin-left:2px}
+  .cartel .qué{margin-top:6px; font-size:19px; color:var(--on-iron); font-weight:600}
+  .cartel .extra{margin-top:12px; display:inline-block; background:rgba(255,200,69,.14); border:1px solid var(--spark); color:var(--spark); border-radius:999px; padding:7px 14px; font-size:14.5px; font-weight:600}
+  .cartel .cuenta{margin-top:18px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap}
+  .cartel .casilla{background:#20262B; border:1px solid #333B43; border-radius:10px; padding:9px 12px; min-width:64px}
+  .cartel .casilla b{display:block; font-family:"Fraunces",Georgia,serif; font-size:25px; color:var(--on-iron); font-variant-numeric:tabular-nums}
+  .cartel .casilla span{display:block; font-size:11.5px; color:var(--on-iron-soft); margin-top:2px}
+  .cartel .fin{margin-top:14px; font-size:14px; color:var(--on-iron-soft)}
+  .pulso{animation:pulso 2.4s ease-in-out infinite}
+  @keyframes pulso{0%,100%{opacity:1}50%{opacity:.55}}
+
+  section{padding:52px 0; scroll-margin-top:74px}
   section + section{border-top:1px solid var(--line)}
-  h2{font-size:clamp(27px,4.4vw,37px);max-width:24ch}
-  .sub{margin-top:10px;color:var(--ink-soft);max-width:60ch}
+  h2{font-size:clamp(27px, 4.4vw, 37px); max-width:24ch}
+  .sub{margin-top:10px; color:var(--ink-soft); max-width:60ch}
 
-  .fugas{margin-top:26px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-  .fuga{background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--ember);border-radius:10px;padding:20px}
-  .fuga h3{font-size:20px;margin-bottom:6px}
-  .fuga p{color:var(--ink-soft);font-size:15px}
+  .fugas{margin-top:26px; display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+  .fuga{background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--ember); border-radius:10px; padding:20px}
+  [dir="rtl"] .fuga{border-left:1px solid var(--line); border-right:4px solid var(--ember)}
+  .fuga h3{font-size:20px; margin-bottom:6px}
+  .fuga p{color:var(--ink-soft); font-size:15px}
 
-  .mitades{margin-top:28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-  .mitad{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .mitades{margin-top:28px; display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .mitad{background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px}
   .mitad h3{font-size:23px}
-  .mitad .rol{margin-top:4px;color:var(--ember);font-weight:600;font-size:14px}
-  .mitad ul{margin:14px 0 0;padding-inline-start:20px;color:var(--ink-soft)}
+  .mitad .rol{margin-top:4px; color:var(--ember); font-weight:600; font-size:14px}
+  .mitad ul{margin:14px 0 0; padding-inline-start:20px; color:var(--ink-soft)}
   .mitad ul li{margin-bottom:5px}
 
-  .charla{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .charla .b{max-width:82%;padding:11px 14px;border-radius:14px;font-size:15px;margin-bottom:9px;line-height:1.45}
-  .charla .cliente{background:var(--bg);border:1px solid var(--line);border-end-end-radius:5px;margin-inline-start:auto}
-  .charla .agente{background:var(--iron);color:var(--on-iron);border-end-start-radius:5px}
-  .charla .pie{margin-top:12px;font-size:14px;color:var(--ink-soft)}
+  .charla{margin-top:26px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px}
+  .charla .b{max-width:82%; padding:11px 14px; border-radius:14px; font-size:15px; margin-bottom:9px; line-height:1.45}
+  .charla .cliente{background:var(--bg); border:1px solid var(--line); border-bottom-right-radius:5px; margin-inline-start:auto}
+  .charla .agente{background:var(--iron); color:var(--on-iron); border-bottom-left-radius:5px}
+  .charla .pie{margin-top:12px; font-size:14px; color:var(--ink-soft)}
 
-  ol.steps{list-style:none;padding:0;margin:26px 0 0;border-top:1px solid var(--line)}
-  ol.steps li{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:19px 0;border-bottom:1px solid var(--line)}
-  ol.steps .n{font-family:"Fraunces",Georgia,serif;font-size:33px;color:var(--ember);line-height:1}
-  ol.steps strong{display:block;font-weight:600}
+  ol.steps{list-style:none; padding:0; margin:26px 0 0; border-top:1px solid var(--line)}
+  ol.steps li{display:grid; grid-template-columns:62px 1fr; gap:14px; padding:19px 0; border-bottom:1px solid var(--line)}
+  ol.steps .n{font-family:"Fraunces",Georgia,serif; font-size:33px; color:var(--ember); line-height:1}
+  ol.steps strong{display:block; font-weight:600}
   ol.steps span{color:var(--ink-soft)}
 
-  .sectores{margin-top:22px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-  .sector{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
-  .sector strong{display:block;font-weight:600}
-  .sector span{color:var(--ink-soft);font-size:15px}
+  .sectores{margin-top:22px; display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .sector{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:16px 18px}
+  .sector strong{display:block; font-weight:600}
+  .sector span{color:var(--ink-soft); font-size:15px}
 
-  .destacado{margin-top:26px;background:var(--iron);color:var(--on-iron);border-radius:16px;padding:28px}
-  .destacado .etiqueta{display:inline-block;background:var(--ember);color:#fff;font-size:12px;font-weight:600;padding:4px 11px;border-radius:999px;margin-bottom:12px}
-  .destacado h3{font-size:27px;color:var(--on-iron)}
-  .destacado p{color:var(--on-iron-soft);margin-top:8px;max-width:52ch}
-  .destacado .cifras{margin-top:20px;display:flex;flex-wrap:wrap;gap:26px;align-items:baseline}
-  .destacado .precio{font-family:"Fraunces",Georgia,serif;font-size:32px}
-  .destacado .precio small{display:block;font-family:"Instrument Sans",sans-serif;font-size:14px;color:var(--on-iron-soft);margin-top:3px}
-  .antes{text-decoration:line-through;color:var(--on-iron-soft);font-size:20px;margin-inline-end:8px}
-  .destacado .acc{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
-  .destacado .acc a{text-decoration:none;font-weight:600;padding:13px 20px;border-radius:8px}
-  .destacado .acc a.pri{background:var(--ember);color:#fff}
-  .destacado .acc a.sec{border:1px solid #454C53;color:var(--on-iron)}
+  .destacado{margin-top:26px; background:var(--iron); color:var(--on-iron); border-radius:16px; padding:26px; border:2px solid var(--ember)}
+  .destacado .etiqueta{display:inline-block; background:var(--ember); color:#fff; font-size:12px; font-weight:600; padding:4px 11px; border-radius:999px; margin-bottom:12px}
+  .destacado h3{font-size:27px; color:var(--on-iron)}
+  .destacado p{color:var(--on-iron-soft); margin-top:8px; max-width:52ch}
+  .destacado .cifras{margin-top:18px; display:flex; flex-wrap:wrap; gap:24px; align-items:baseline}
+  .destacado .precio{font-family:"Fraunces",Georgia,serif; font-size:31px}
+  .destacado .precio small{display:block; font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--on-iron-soft); margin-top:3px}
+  .tachado{text-decoration:line-through; color:var(--on-iron-soft); font-size:.55em; margin-inline-end:8px; text-decoration-thickness:2px}
+  .destacado .acc{margin-top:20px; display:flex; flex-wrap:wrap; gap:10px}
+  .destacado .acc a{text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px}
+  .destacado .acc a.pri{background:var(--ember); color:#fff}
+  .destacado .acc a.sec{border:1px solid #454C53; color:var(--on-iron)}
 
-  .pagos{margin-top:22px;display:grid;gap:12px}
-  .pago{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
-  .pago strong{display:block;font-weight:600;font-size:17px}
-  .pago p{color:var(--ink-soft);font-size:15px;margin-top:3px;max-width:46ch}
-  .pago .monto{font-family:"Fraunces",Georgia,serif;font-size:23px;margin-top:8px}
-  .pago .monto small{font-family:"Instrument Sans",sans-serif;font-size:14px;color:var(--ink-soft)}
-  .pagar{display:inline-block;background:var(--ember);color:var(--ember-ink);text-decoration:none;font-weight:600;padding:13px 20px;border-radius:8px;white-space:nowrap}
-  .pagar.suave{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .contado{margin-top:26px; background:var(--paper); border:2px solid var(--spark); border-radius:14px; padding:22px}
+  .contado h3{font-size:21px}
+  .contado p{color:var(--ink-soft); margin-top:6px; max-width:58ch}
+  .contado ul{margin:12px 0 0; padding-inline-start:20px; color:var(--ink-soft)}
+  .contado li{margin-bottom:4px}
+
+  .pagos{margin-top:22px; display:grid; gap:12px}
+  .pago{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:20px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center}
+  .pago.destaca{border-color:var(--spark); border-width:2px}
+  .pago strong{display:block; font-weight:600; font-size:17px}
+  .pago p{color:var(--ink-soft); font-size:15px; margin-top:3px; max-width:46ch}
+  .pago .monto{font-family:"Fraunces",Georgia,serif; font-size:23px; margin-top:8px}
+  .pago .monto .tach{text-decoration:line-through; color:var(--ink-soft); font-size:.7em; margin-inline-end:7px}
+  .pago .monto small{font-family:"Instrument Sans",sans-serif; font-size:14px; color:var(--ink-soft)}
+  .pagar{display:inline-block; background:var(--ember); color:var(--ember-ink); text-decoration:none; font-weight:600; padding:13px 20px; border-radius:8px; white-space:nowrap; text-align:center}
+  .pagar.oro{background:var(--spark); color:#20262B}
+  .pagar.suave{background:transparent; color:var(--ink); border:1px solid var(--line)}
   .pagar:hover{filter:brightness(1.07)}
-  @media (max-width:620px){.pago{grid-template-columns:1fr} .pagar{text-align:center}}
+  @media (max-width:620px){.pago{grid-template-columns:1fr}}
   .grupo{margin-top:30px}
-  .grupo > h3{font-size:21px;margin-bottom:3px}
-  .grupo > p{color:var(--ink-soft);font-size:15px}
-  .segura{margin-top:20px;font-size:14px;color:var(--ink-soft)}
+  .grupo > h3{font-size:21px; margin-bottom:3px}
+  .grupo > p{color:var(--ink-soft); font-size:15px}
+  .segura{margin-top:20px; font-size:14px; color:var(--ink-soft)}
 
-  details{border-top:1px solid var(--line);padding:16px 0}
+  details{border-top:1px solid var(--line); padding:16px 0}
   details:last-of-type{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer;font-weight:600;list-style:none}
+  summary{cursor:pointer; font-weight:600; list-style:none}
   summary::-webkit-details-marker{display:none}
-  details p{margin-top:10px;color:var(--ink-soft);max-width:62ch}
+  summary::after{content:"+"; float:inline-end; color:var(--ember); font-weight:600}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:10px; color:var(--ink-soft); max-width:62ch}
 
-  .contacto{margin-top:20px;font-size:16px;color:var(--on-iron-soft)}
+  .contacto{margin-top:20px; font-size:16px; color:var(--on-iron-soft)}
   .contacto a{color:var(--on-iron)}
-  footer{padding:34px 0 100px;color:var(--ink-soft);font-size:14.5px}
+  footer{padding:34px 0 100px; color:var(--ink-soft); font-size:14.5px}
   footer a{text-decoration:none}
-  .final{background:var(--iron);color:var(--on-iron);padding:54px 0;scroll-margin-top:110px}
+  .final{background:var(--iron); color:var(--on-iron); padding:52px 0; scroll-margin-top:74px}
   .final h2{color:var(--on-iron)}
-  .final p{color:var(--on-iron-soft);margin-top:12px}
+  .final p{color:var(--on-iron-soft); margin-top:12px}
 </style>
 </head>
 <body>
 <a class="saltar" href="#contenido" data-i18n="saltar">Saltar al contenido</a>
-<div class="aviso"><span data-i18n="aviso">Apertura de Forja Labs: <strong>50 % de descuento</strong> en todos los paquetes hasta el 16 de marzo de 2027.</span></div>
+
+<div class="cintillo">
+  <span data-i18n="cintillo">Apertura: 50 % de descuento en todos los servicios · solo por un mes</span>
+  <span class="reloj pulso" id="reloj"></span>
+</div>
 
 <header class="top">
   <div class="wrap">
@@ -156,7 +207,18 @@
         Forja Labs
       </a>
       <div class="derecha">
-        <select id="idioma" aria-label="Idioma / Language"></select>
+        <select id="idioma" aria-label="Idioma / Language">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ar">العربية</option>
+          <option value="bn">বাংলা</option>
+          <option value="pt">Português</option>
+          <option value="ru">Русский</option>
+          <option value="fr">Français</option>
+          <option value="ur">اردو</option>
+        </select>
         <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menú"><span></span></button>
       </div>
     </div>
@@ -175,169 +237,238 @@
   <div class="wrap">
     <h1 data-i18n="h1">Una página que vende. Un agente que atiende.</h1>
     <p class="lead" data-i18n="lead">Su negocio pierde dinero por dos puertas: la gente que no encuentra dónde pagarle y la que escribe y no recibe respuesta. Cerramos las dos, para cualquier giro, con precio fijo y fecha de entrega.</p>
-    <a class="cta" id="cta1" href="https://wa.me/523223102049" data-i18n="cta_hero">Hablemos de mi negocio</a>
-    <p class="meta" data-i18n="meta_hero">Respondemos el mismo día. Sin compromiso.</p>
+    <a class="cta" id="cta1" href="https://wa.me/523223102049" data-i18n="cta1">Hablemos de mi negocio</a>
+    <p class="meta" data-i18n="meta">Respondemos el mismo día. Sin compromiso.</p>
+
+    <div class="cartel">
+      <div class="banda">
+        <span data-i18n="cartelBanda">PROMOCIÓN DE APERTURA</span>
+        <span data-i18n="cartelTodos">Aplica a todos los servicios</span>
+      </div>
+      <div class="cuerpo">
+        <div class="cifra">50<span>%</span></div>
+        <p class="qué" data-i18n="cartelQue">de descuento en todo, solo durante el primer mes</p>
+        <span class="extra" data-i18n="cartelExtra">+ 10 % adicional pagando de contado, con prioridad de entrega</span>
+        <div class="cuenta" id="cuenta" aria-live="polite"></div>
+        <p class="fin" id="fin"></p>
+      </div>
+    </div>
   </div>
 </div>
 
 <main id="contenido">
 <div class="wrap">
   <section id="problema">
-    <h2 data-i18n="p_t">Las dos fugas de cualquier negocio</h2>
-    <p class="sub" data-i18n="p_s">No importa si vende consultas, comida, casas, clases o refacciones. El dinero se escapa por los mismos dos lugares.</p>
+    <h2 data-i18n="s1t">Las dos fugas de cualquier negocio</h2>
+    <p class="sub" data-i18n="s1s">No importa si vende consultas, comida, casas, clases o refacciones. El dinero se escapa por los mismos dos lugares.</p>
     <div class="fugas">
-      <div class="fuga"><h3 data-i18n="f1_t">El cliente quiere pagar y no puede</h3><p data-i18n="f1_d">Le piden precio por mensaje, usted contesta, manda su número de cuenta, el cliente lo piensa y se enfría. Cada paso de más entre la intención y el pago le cuesta ventas.</p></div>
-      <div class="fuga"><h3 data-i18n="f2_t">El cliente escribe y nadie contesta</h3><p data-i18n="f2_d">Le escriben a las once de la noche, en domingo, o mientras usted atiende a otro. Quien no recibe respuesta en minutos le escribe al siguiente. Esa venta ya no vuelve.</p></div>
+      <div class="fuga">
+        <h3 data-i18n="f1t">El cliente quiere pagar y no puede</h3>
+        <p data-i18n="f1p">Le piden precio por mensaje, usted contesta, manda su número de cuenta, el cliente lo piensa y se enfría. Cada paso de más entre la intención y el pago le cuesta ventas.</p>
+      </div>
+      <div class="fuga">
+        <h3 data-i18n="f2t">El cliente escribe y nadie contesta</h3>
+        <p data-i18n="f2p">Le escriben a las once de la noche, en domingo, o mientras usted atiende a otro. Quien no recibe respuesta en minutos le escribe al siguiente. Esa venta ya no vuelve.</p>
+      </div>
     </div>
   </section>
 
   <section id="solucion">
-    <h2 data-i18n="s_t">Lo que entregamos</h2>
-    <p class="sub" data-i18n="s_s">Dos piezas que trabajan juntas: una vende cuando usted no está, la otra atiende cuando usted no puede.</p>
+    <h2 data-i18n="s2t">Lo que entregamos</h2>
+    <p class="sub" data-i18n="s2s">Dos piezas que trabajan juntas: una vende cuando usted no está, la otra atiende cuando usted no puede.</p>
     <div class="mitades">
       <div class="mitad">
-        <h3 data-i18n="m1_t">La página</h3>
-        <p class="rol" data-i18n="m1_r">Vende y cobra</p>
-        <ul data-i18n="m1_l"><li>Una sola pantalla, clara y rápida en el teléfono de sus clientes</li><li>Sus servicios y precios escritos para vender, no solo para informar</li><li>Cobro con tarjeta, transferencia y OXXO vía Stripe, a su propia cuenta</li><li>Agenda o formulario, con aviso a su WhatsApp</li><li>Dominio y hospedaje a su nombre, sin cuotas ocultas</li><li>Manual para que usted cambie textos, precios y fotos</li></ul>
+        <h3 data-i18n="m1t">La página</h3>
+        <p class="rol" data-i18n="m1r">Vende y cobra</p>
+        <ul>
+          <li data-i18n="m1a">Una sola pantalla, clara y rápida en el teléfono de sus clientes</li>
+          <li data-i18n="m1b">Sus servicios y precios escritos para vender, no solo para informar</li>
+          <li data-i18n="m1c">Cobro con tarjeta, transferencia y OXXO vía Stripe, a su propia cuenta</li>
+          <li data-i18n="m1d">Agenda o formulario, con aviso a su WhatsApp</li>
+          <li data-i18n="m1e">Dominio y hospedaje a su nombre, sin cuotas ocultas</li>
+          <li data-i18n="m1f">Manual para que usted cambie textos, precios y fotos</li>
+        </ul>
       </div>
       <div class="mitad">
-        <h3 data-i18n="m2_t">El agente de IA</h3>
-        <p class="rol" data-i18n="m2_r">Atiende y agenda</p>
-        <ul data-i18n="m2_l"><li>Contesta en WhatsApp y en su página, las 24 horas</li><li>Responde precios, horarios, ubicación y las preguntas de siempre</li><li>Agenda citas y las manda a su calendario</li><li>Captura nombre, teléfono y qué necesita cada persona</li><li>Le pasa la conversación en cuanto el caso lo amerita</li><li>Panel para ver conversaciones, citas y contactos nuevos</li></ul>
+        <h3 data-i18n="m2t">El agente de IA</h3>
+        <p class="rol" data-i18n="m2r">Atiende y agenda</p>
+        <ul>
+          <li data-i18n="m2a">Contesta en WhatsApp y en su página, las 24 horas</li>
+          <li data-i18n="m2b">Responde precios, horarios, ubicación y las preguntas de siempre</li>
+          <li data-i18n="m2c">Agenda citas y las manda a su calendario</li>
+          <li data-i18n="m2d">Captura nombre, teléfono y qué necesita cada persona</li>
+          <li data-i18n="m2e">Le pasa la conversación en cuanto el caso lo amerita</li>
+          <li data-i18n="m2f">Panel para ver conversaciones, citas y contactos nuevos</li>
+        </ul>
       </div>
     </div>
+
     <div class="charla">
       <div class="b cliente" data-i18n="ch1">Hola, ¿cuánto cuesta y tienen para el sábado?</div>
       <div class="b agente" data-i18n="ch2">Buenas noches. El servicio cuesta $850 e incluye valoración. El sábado tengo libre 10:00 y 13:30. ¿Le aparto alguno?</div>
       <div class="b cliente" data-i18n="ch3">El de las 10, por favor.</div>
       <div class="b agente" data-i18n="ch4">Listo. ¿Me confirma su nombre y teléfono? Le mando el recordatorio y la liga para dejarlo pagado si prefiere.</div>
-      <p class="pie" data-i18n="ch_pie">Una conversación de las 11 de la noche de un sábado, atendida sin que usted tocara el teléfono.</p>
+      <p class="pie" data-i18n="ch5">Una conversación de las 11 de la noche de un sábado, atendida sin que usted tocara el teléfono.</p>
     </div>
   </section>
 
   <section id="negocios">
-    <h2 data-i18n="n_t">Funciona en cualquier giro</h2>
-    <p class="sub" data-i18n="n_s">Lo que cambia es qué vende y qué preguntas le hacen. La estructura es la misma.</p>
-    <div class="sectores" data-i18n="n_l">
-      <div class="sector"><strong>Consultorios y clínicas</strong><span>Citas apartadas y pagadas; el agente filtra urgencias.</span></div>
-      <div class="sector"><strong>Restaurantes y cafeterías</strong><span>Menú, reservas y pedidos sin saturar el teléfono.</span></div>
-      <div class="sector"><strong>Inmobiliarias</strong><span>Fichas de propiedades y visitas agendadas al instante.</span></div>
-      <div class="sector"><strong>Talleres y servicios</strong><span>Cotizaciones frecuentes y citas de entrega.</span></div>
-      <div class="sector"><strong>Salones y estética</strong><span>Agenda llena sin contestar entre cliente y cliente.</span></div>
-      <div class="sector"><strong>Gimnasios y entrenadores</strong><span>Planes con cobro mensual automático.</span></div>
-      <div class="sector"><strong>Despachos y consultoras</strong><span>Primera consulta cobrada por adelantado.</span></div>
-      <div class="sector"><strong>Escuelas y talleres</strong><span>Inscripciones en línea y dudas resueltas solas.</span></div>
-      <div class="sector"><strong>Tiendas y distribuidores</strong><span>Catálogo, precios y apartados con anticipo.</span></div>
+    <h2 data-i18n="s3t">Funciona en cualquier giro</h2>
+    <p class="sub" data-i18n="s3s">Lo que cambia es qué vende y qué preguntas le hacen. La estructura es la misma.</p>
+    <div class="sectores">
+      <div class="sector"><strong data-i18n="g1t">Consultorios y clínicas</strong><span data-i18n="g1p">Citas apartadas y pagadas; el agente filtra urgencias.</span></div>
+      <div class="sector"><strong data-i18n="g2t">Restaurantes y cafeterías</strong><span data-i18n="g2p">Menú, reservas y pedidos sin saturar el teléfono.</span></div>
+      <div class="sector"><strong data-i18n="g3t">Inmobiliarias</strong><span data-i18n="g3p">Fichas de propiedades y visitas agendadas al instante.</span></div>
+      <div class="sector"><strong data-i18n="g4t">Talleres y servicios</strong><span data-i18n="g4p">Cotizaciones frecuentes y citas de entrega.</span></div>
+      <div class="sector"><strong data-i18n="g5t">Salones y estética</strong><span data-i18n="g5p">Agenda llena sin contestar entre cliente y cliente.</span></div>
+      <div class="sector"><strong data-i18n="g6t">Gimnasios y entrenadores</strong><span data-i18n="g6p">Planes con cobro mensual automático.</span></div>
+      <div class="sector"><strong data-i18n="g7t">Despachos y consultoras</strong><span data-i18n="g7p">Primera consulta cobrada por adelantado.</span></div>
+      <div class="sector"><strong data-i18n="g8t">Escuelas y talleres</strong><span data-i18n="g8p">Inscripciones en línea y dudas resueltas solas.</span></div>
+      <div class="sector"><strong data-i18n="g9t">Tiendas y distribuidores</strong><span data-i18n="g9p">Catálogo, precios y apartados con anticipo.</span></div>
     </div>
   </section>
 
   <section id="proceso">
-    <h2 data-i18n="pr_t">Cómo funciona</h2>
-    <p class="sub" data-i18n="pr_s">Tres semanas de principio a fin. Usted decide y aprueba; nosotros construimos.</p>
-    <ol class="steps" data-i18n="pr_l">
-      <li><span class="n">1</span><div><strong>Llamada de 30 minutos</strong><span>Entendemos qué vende, qué le preguntan sus clientes y dónde se le atora el dinero hoy.</span></div></li>
-      <li><span class="n">2</span><div><strong>Propuesta en 48 horas</strong><span>Le mostramos el diseño en su teléfono y la lista de preguntas que responderá el agente, con fecha por escrito.</span></div></li>
-      <li><span class="n">3</span><div><strong>Construcción y entrenamiento</strong><span>Armamos la página, conectamos los pagos y entrenamos al agente con la información real de su negocio.</span></div></li>
-      <li><span class="n">4</span><div><strong>Pruebas con usted</strong><span>Hacemos un cobro real y conversaciones de prueba. Usted aprueba cada respuesta antes de salir al aire.</span></div></li>
-      <li><span class="n">5</span><div><strong>Entrega y acompañamiento</strong><span>Todo queda a su nombre, con manual. Las primeras dos semanas afinamos respuestas sin costo.</span></div></li>
+    <h2 data-i18n="s4t">Cómo funciona</h2>
+    <p class="sub" data-i18n="s4s">Tres semanas de principio a fin. Usted decide y aprueba; nosotros construimos.</p>
+    <ol class="steps">
+      <li><span class="n">1</span><div><strong data-i18n="p1t">Llamada de 30 minutos</strong><span data-i18n="p1p">Entendemos qué vende, qué le preguntan sus clientes y dónde se le atora el dinero hoy.</span></div></li>
+      <li><span class="n">2</span><div><strong data-i18n="p2t">Propuesta en 48 horas</strong><span data-i18n="p2p">Le mostramos el diseño en su teléfono y la lista de preguntas que responderá el agente, con fecha por escrito.</span></div></li>
+      <li><span class="n">3</span><div><strong data-i18n="p3t">Construcción y entrenamiento</strong><span data-i18n="p3p">Armamos la página, conectamos los pagos y entrenamos al agente con la información real de su negocio.</span></div></li>
+      <li><span class="n">4</span><div><strong data-i18n="p4t">Pruebas con usted</strong><span data-i18n="p4p">Hacemos un cobro real y conversaciones de prueba. Usted aprueba cada respuesta antes de salir al aire.</span></div></li>
+      <li><span class="n">5</span><div><strong data-i18n="p5t">Entrega y acompañamiento</strong><span data-i18n="p5p">Todo queda a su nombre, con manual. Las primeras dos semanas afinamos respuestas sin costo.</span></div></li>
     </ol>
   </section>
 
   <section id="contratar">
-    <h2 data-i18n="c_t">Precios de apertura</h2>
-    <p class="sub" data-i18n="c_s">Forja Labs abre sus puertas y durante seis meses todos los paquetes cuestan la mitad. El descuento aplica a la construcción; el servicio mensual del agente cubre costos reales y no cambia. La campaña termina el 16 de marzo de 2027.</p>
+    <h2 data-i18n="s5t">Precios de apertura</h2>
+    <p class="sub" data-i18n="s5s">Todos los precios ya llevan el 50 % de descuento de apertura. Al terminar el mes vuelven a su valor de lista. El cobro lo procesa Stripe.</p>
+
+    <div class="contado">
+      <h3 data-i18n="contT">Pagando de contado: 10 % adicional y prioridad</h3>
+      <p data-i18n="contP">Quien liquida por adelantado no solo paga menos: se salta la fila.</p>
+      <ul>
+        <li data-i18n="contA">10 % de descuento extra sobre el precio ya rebajado</li>
+        <li data-i18n="contB">Prioridad en la fila de producción: su proyecto entra primero</li>
+        <li data-i18n="contC">Arranque en 48 horas en lugar de esperar turno</li>
+        <li data-i18n="contD">Una ronda extra de ajustes, sin costo</li>
+      </ul>
+    </div>
 
     <div class="destacado">
-      <span class="etiqueta" data-i18n="d_e">Apertura · 50 % de descuento</span>
-      <h3 data-i18n="d_t">Vender y Atender</h3>
-      <p data-i18n="d_d">La página que cobra más el agente que contesta, trabajando juntos. Es lo que recomendamos para casi todos los negocios.</p>
+      <span class="etiqueta" data-i18n="destE">EL MÁS PEDIDO</span>
+      <h3 data-i18n="destT">Vender y Atender</h3>
+      <p data-i18n="destP">La página que cobra más el agente que contesta, trabajando juntos.</p>
       <div class="cifras">
-        <div class="precio"><span class="antes">$28,000</span>$14,000 MXN<small data-i18n="d_p1">Pago único · 50 % al iniciar</small></div>
-        <div class="precio">$2,500 MXN<small data-i18n="d_p2">Servicio mensual del agente</small></div>
-        <div class="precio" data-i18n="d_p3">3 semanas<small>Tiempo de entrega</small></div>
+        <div class="precio"><span class="tachado">$28,000</span>$14,000<small data-i18n="destS1">MXN · anticipo de $7,000</small></div>
+        <div class="precio">$12,600<small data-i18n="destS2">de contado · con prioridad</small></div>
+        <div class="precio">$2,500<small data-i18n="destS3">al mes, servicio del agente</small></div>
       </div>
       <div class="acc">
-        <a class="pri" href="https://buy.stripe.com/3cIaEY5RC4z6dfn2GhgEg0M" data-i18n="d_b1">Pagar anticipo de $7,000</a>
-        <a class="sec" href="https://buy.stripe.com/7sY3cw1Bmd5C8Z73KlgEg0N" data-i18n="d_b2">Pagar completo $14,000</a>
-        <a class="sec" id="cta3" href="https://wa.me/523223102049" data-i18n="d_b3">Hablar antes</a>
+        <a class="pri" href="https://buy.stripe.com/9B628sa7S3v23EN3KlgEg0S" data-i18n="destB1">Pagar de contado $12,600</a>
+        <a class="sec" href="https://buy.stripe.com/7sY14ofsc6Heb7f5StgEg0I" data-i18n="destB2">Pagar anticipo $7,000</a>
       </div>
     </div>
 
     <div class="grupo">
-      <h3 data-i18n="g1_t">Solo la página</h3>
-      <p data-i18n="g1_d">Si por ahora solo necesita vender en línea. Entrega en 10 días.</p>
+      <h3 data-i18n="gr1t">Solo la página</h3>
+      <p data-i18n="gr1p">Si por ahora solo necesita vender en línea. Entrega en 10 días.</p>
       <div class="pagos">
-        <div class="pago"><div><strong data-i18n="g1_a">Anticipo del 50 %</strong><p data-i18n="g1_p">El resto se paga al entregar.</p><div class="monto">$3,000 MXN <small data-i18n="g1_m">de $6,000 en total, antes $12,000</small></div></div><a class="pagar" href="https://buy.stripe.com/00w14o5RCfdK0sB4OpgEg0K" data-i18n="btn_ant">Pagar anticipo</a></div>
-        <div class="pago"><div><strong data-i18n="g1_b">Mantenimiento mensual</strong><p data-i18n="g1_q">Opcional: cambios de contenido, respaldos y soporte.</p><div class="monto">$900 MXN <small data-i18n="almes">al mes</small></div></div><a class="pagar suave" href="https://buy.stripe.com/bJedRabbW1mUa3b2GhgEg0q" data-i18n="btn_sus">Suscribirme</a></div>
+        <div class="pago destaca">
+          <div><strong data-i18n="contadoT">Pago de contado</strong><p data-i18n="contadoP">10 % extra de descuento y prioridad en la fila.</p><div class="monto"><span class="tach">$12,000</span>$5,400 <small>MXN</small></div></div>
+          <a class="pagar oro" href="https://buy.stripe.com/14A00k0xi8Pmcbj1CdgEg0P" data-i18n="pagarContado">Pagar de contado</a>
+        </div>
+        <div class="pago">
+          <div><strong data-i18n="anticipoT">Anticipo del 50 %</strong><p data-i18n="anticipoP">El resto se paga al entregar.</p><div class="monto">$3,000 <small data-i18n="de6000">de $6,000 en total</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/8x2dRagwg0iQ3EN4OpgEg0H" data-i18n="pagarAnticipo">Pagar anticipo</a>
+        </div>
       </div>
     </div>
 
     <div class="grupo">
-      <h3 data-i18n="g2_t">Solo el agente</h3>
-      <p data-i18n="g2_d">Si ya tiene página y lo que le falta es contestar. Entrega en 2 semanas.</p>
+      <h3 data-i18n="gr2t">Solo el agente</h3>
+      <p data-i18n="gr2p">Si ya tiene página y lo que le falta es contestar. Entrega en 2 semanas, más $2,500 al mes.</p>
       <div class="pagos">
-        <div class="pago"><div><strong data-i18n="g1_a2">Anticipo del 50 %</strong><p data-i18n="g2_p">Levantamos las preguntas de su negocio y entrenamos al agente.</p><div class="monto">$5,000 MXN <small data-i18n="g2_m">de $10,000 en total, antes $20,000</small></div></div><a class="pagar" href="https://buy.stripe.com/dRm7sMcg0c1y1wF4OpgEg0L" data-i18n="btn_ant2">Pagar anticipo</a></div>
-        <div class="pago"><div><strong data-i18n="g2_b">Servicio mensual</strong><p data-i18n="g2_q">Hospedaje, consumo de IA, ajustes y soporte. Necesario para que el agente opere.</p><div class="monto">$2,500 MXN <small data-i18n="almes2">al mes</small></div></div><a class="pagar suave" href="https://buy.stripe.com/fZu28s6VG9TqfnveoZgEg0u" data-i18n="btn_sus2">Suscribirme</a></div>
+        <div class="pago destaca">
+          <div><strong data-i18n="contadoT2">Pago de contado</strong><p data-i18n="contadoP2">10 % extra de descuento y prioridad en la fila.</p><div class="monto"><span class="tach">$20,000</span>$9,000 <small>MXN</small></div></div>
+          <a class="pagar oro" href="https://buy.stripe.com/aFaeVe0xie9Gdfn80BgEg0Q" data-i18n="pagarContado2">Pagar de contado</a>
+        </div>
+        <div class="pago">
+          <div><strong data-i18n="anticipoT2">Anticipo del 50 %</strong><p data-i18n="anticipoP2">El resto se paga al entregar.</p><div class="monto">$5,000 <small data-i18n="de10000">de $10,000 en total</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/3cI3cw1Bm3v25MV5StgEg0G" data-i18n="pagarAnticipo2">Pagar anticipo</a>
+        </div>
       </div>
     </div>
 
     <div class="grupo">
-      <h3 data-i18n="g3_t">¿Vende cursos o membresías?</h3>
-      <p data-i18n="g3_d">Versión con área privada de alumnos y cobro recurrente. Apertura: $17,500 en lugar de $35,000, más $2,000 al mes.</p>
+      <h3 data-i18n="gr3t">¿Vende cursos o membresías?</h3>
+      <p data-i18n="gr3p">Plataforma con área privada de alumnos y cobro recurrente. Entrega en 3 a 4 semanas, más $2,000 al mes.</p>
       <div class="pagos">
-        <div class="pago"><div><strong data-i18n="g3_a">Plataforma de alumnos — anticipo</strong><p data-i18n="g3_p">Cursos, membresías, altas y bajas automáticas.</p><div class="monto">$8,750 MXN <small data-i18n="g3_m">de $17,500 en total, antes $35,000</small></div></div><a class="pagar suave" href="https://buy.stripe.com/5kQ4gAa7SghOejra8JgEg0O" data-i18n="btn_ant3">Pagar anticipo</a></div>
+        <div class="pago destaca">
+          <div><strong data-i18n="contadoT3">Pago de contado</strong><p data-i18n="contadoP3">10 % extra de descuento y prioridad en la fila.</p><div class="monto"><span class="tach">$35,000</span>$15,750 <small>MXN</small></div></div>
+          <a class="pagar oro" href="https://buy.stripe.com/dRm14ofsc8Pm3EN4OpgEg0R" data-i18n="pagarContado3">Pagar de contado</a>
+        </div>
+        <div class="pago">
+          <div><strong data-i18n="anticipoT3">Anticipo del 50 %</strong><p data-i18n="anticipoP3">El resto se paga al entregar.</p><div class="monto">$8,750 <small data-i18n="de17500">de $17,500 en total</small></div></div>
+          <a class="pagar" href="https://buy.stripe.com/7sYeVe4Ny1mUdfn0y9gEg0J" data-i18n="pagarAnticipo3">Pagar anticipo</a>
+        </div>
       </div>
     </div>
 
-    <p class="segura" data-i18n="c_pie">Los precios son de partida y cubren lo descrito. Si su proyecto pide más, se lo decimos antes de cobrar, no después. Las comisiones de Stripe se pagan directo a Stripe.</p>
+    <p class="segura" data-i18n="segura">Precios en pesos mexicanos, con el descuento de apertura ya aplicado. El servicio mensual del agente no entra en la promoción. Si su proyecto pide más de lo descrito, se lo decimos antes de cobrar, no después.</p>
   </section>
 
   <section id="preguntas">
-    <h2 data-i18n="q_t">Preguntas frecuentes</h2>
-    <div style="margin-top:20px" data-i18n="q_l">
-      <details><summary>¿El descuento es real?</summary><p>Sí. Forja Labs abre y prefiere llenar su agenda con clientes reales antes que con precios de lista. La mitad de precio aplica a la construcción, no al servicio mensual, y termina el 16 de marzo de 2027.</p></details>
-      <details><summary>¿Mi negocio es muy pequeño para esto?</summary><p>Si ya tiene clientes que le escriben, no lo es. Entre más chico el equipo, más pesa cada mensaje sin contestar y cada cobro que se enfría.</p></details>
-      <details><summary>¿Necesito saber de tecnología?</summary><p>No. Usted cuenta su negocio y aprueba lo que le mostramos. Nosotros hacemos el resto y le entregamos un manual sencillo.</p></details>
-      <details><summary>¿A dónde llega el dinero de mis clientes?</summary><p>A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
-      <details><summary>¿El agente puede inventarse cosas?</summary><p>Se entrena con la información real de su negocio y con instrucciones explícitas de qué no debe responder. Cuando no sabe algo, lo dice y le pasa la conversación. Usted aprueba las respuestas antes de que salga al aire.</p></details>
-      <details><summary>¿El agente va a espantar a mis clientes?</summary><p>Se presenta como asistente, no finge ser usted, y entrega la conversación en cuanto hay una queja o una negociación. La alternativa real no es usted contestando al instante: es nadie contestando.</p></details>
-      <details><summary>¿Por qué el agente tiene mensualidad y la página no?</summary><p>Porque cada conversación consume IA y hospedaje que se pagan mes con mes. La página, una vez entregada, no consume nada: su mantenimiento es opcional.</p></details>
-      <details><summary>¿Qué pasa si no me gusta lo que veo?</summary><p>Lo ve antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 % y ahí termina el compromiso.</p></details>
-      <details><summary>¿Emiten factura?</summary><p>Sí. Indíquelo al contratar y le pedimos sus datos fiscales.</p></details>
+    <h2 data-i18n="s6t">Preguntas frecuentes</h2>
+    <div style="margin-top:20px">
+      <details><summary data-i18n="q1">¿El descuento es real o el precio estaba inflado?</summary><p data-i18n="a1">Es real y es por apertura. Forja Labs abre este mes y necesita casos reales más que margen. Pasado el mes, los precios vuelven a lista y no se repite.</p></details>
+      <details><summary data-i18n="q2">¿Qué gano pagando de contado?</summary><p data-i18n="a2">Un 10 % extra de descuento, prioridad en la fila de producción, arranque en 48 horas y una ronda adicional de ajustes.</p></details>
+      <details><summary data-i18n="q3">¿Mi negocio es muy pequeño para esto?</summary><p data-i18n="a3">Si ya tiene clientes que le escriben, no lo es. Entre más chico el equipo, más pesa cada mensaje sin contestar.</p></details>
+      <details><summary data-i18n="q4">¿A dónde llega el dinero de mis clientes?</summary><p data-i18n="a4">A su propia cuenta de Stripe, conectada a su banco. Forja Labs nunca toca sus cobros.</p></details>
+      <details><summary data-i18n="q5">¿El agente puede inventarse cosas?</summary><p data-i18n="a5">Se entrena con la información real de su negocio y con instrucciones de qué no debe responder. Cuando no sabe algo, lo dice y le pasa la conversación. Usted aprueba las respuestas antes de que salga al aire.</p></details>
+      <details><summary data-i18n="q6">¿El agente va a espantar a mis clientes?</summary><p data-i18n="a6">Se presenta como asistente, no finge ser usted, y entrega la conversación ante una queja o una negociación. La alternativa real no es usted contestando al instante: es nadie contestando.</p></details>
+      <details><summary data-i18n="q7">¿Por qué el agente tiene mensualidad y la página no?</summary><p data-i18n="a7">Porque cada conversación consume IA y hospedaje que se pagan mes con mes. La página, una vez entregada, no consume nada.</p></details>
+      <details><summary data-i18n="q8">¿Qué pasa si no me gusta lo que veo?</summary><p data-i18n="a8">Ve el diseño antes de que construyamos nada. Si en la propuesta no hay acuerdo, no se paga el segundo 50 % y ahí termina el compromiso.</p></details>
+      <details><summary data-i18n="q9">¿Emiten factura?</summary><p data-i18n="a9">Sí. Indíquelo al contratar y le pedimos sus datos fiscales.</p></details>
     </div>
   </section>
 </div>
 
 <div class="final" id="contacto">
   <div class="wrap">
-    <h2 data-i18n="fin_t">Cuénteme de su negocio.</h2>
-    <p data-i18n="fin_d">Un mensaje basta. Le respondo el mismo día y le digo qué le conviene, aunque la respuesta sea que todavía no necesita nada.</p>
-    <a class="cta" id="cta2" href="https://wa.me/523223102049" data-i18n="fin_b">Escribir por WhatsApp</a>
-    <p class="contacto">O por correo: <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · WhatsApp 322 310 2049</p>
+    <h2 data-i18n="finT">Cuénteme de su negocio.</h2>
+    <p data-i18n="finP">Un mensaje basta. Le respondo el mismo día y le digo qué le conviene, aunque la respuesta sea que todavía no necesita nada.</p>
+    <a class="cta" id="cta2" href="https://wa.me/523223102049" data-i18n="finB">Escribir por WhatsApp</a>
+    <p class="contacto">hola@forjalabs.org · WhatsApp 322 310 2049</p>
   </div>
 </div>
 </main>
 
 <div class="wrap">
-  <footer>Forja Labs · <span data-i18n="pie">Desarrollo web, pagos y automatización con IA · México</span> · <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · <a href="/privacidad.html" data-i18n="pie_p">Aviso de privacidad</a></footer>
+  <footer>Forja Labs · <span data-i18n="pie">Desarrollo web, pagos y automatización con IA · México</span> · <a href="mailto:hola@forjalabs.org">hola@forjalabs.org</a> · <a href="/privacidad.html" data-i18n="aviso">Aviso de privacidad</a></footer>
 </div>
 
 <script>
+  window.FIN_PROMO = "2026-10-16T23:59:59-06:00";
   var WHATSAPP = "523223102049";
-  var texto = "Hola, vi la página de Forja Labs y me interesa el precio de apertura. Mi negocio es: ";
+  var texto = "Hola, vi la p\u00e1gina de Forja Labs y me interesa la promoci\u00f3n de apertura. Mi negocio es: ";
   var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
-  ['cta1','cta2','cta3'].forEach(function(id){ var e = document.getElementById(id); if (e) e.href = url; });
+  ['cta1','cta2'].forEach(function(id){ var e = document.getElementById(id); if (e) e.href = url; });
+
   var burger = document.getElementById('burger'), menu = document.getElementById('menu');
   burger.addEventListener('click', function(){
-    var a = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!a));
-    menu.classList.toggle('open', !a);
+    var abierto = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!abierto));
+    menu.classList.toggle('open', !abierto);
   });
   menu.addEventListener('click', function(e){
-    if (e.target.tagName === 'A' && window.innerWidth < 900) { menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    if (e.target.tagName === 'A' && window.innerWidth < 860) {
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }
   });
 </script>
-<script src="/i18n.js" defer></script>
+<script src="/idiomas.js" defer></script>
 <script src="/agente.js" defer></script>
 </body>
 </html>
