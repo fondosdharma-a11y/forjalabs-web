@@ -15,6 +15,12 @@
     base[el.getAttribute("data-i18n")] = el.textContent;
   });
 
+  function meta(nombre, valor) {
+    if (!valor) return;
+    var e = document.querySelector("meta[" + (nombre.indexOf("og:") === 0 ? "property" : "name") + "='" + nombre + "']");
+    if (e) e.setAttribute("content", valor);
+  }
+
   function aplicar(dic, codigo) {
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var k = el.getAttribute("data-i18n");
@@ -25,6 +31,14 @@
     document.documentElement.dir = RTL[codigo] ? "rtl" : "ltr";
     actual = codigo;
     window.FORJA_DIC = dic || {};
+
+    // La pestaña del navegador y las vistas previas siguen el idioma elegido
+    var titular = (dic && dic.h1) || base.h1;
+    var entrada = (dic && dic.lead) || base.lead;
+    if (titular) { document.title = titular + " — Forja Labs"; meta("og:title", titular); }
+    if (entrada) { meta("description", entrada); meta("og:description", entrada); }
+    meta("og:locale", codigo);
+
     reloj();
     try { localStorage.setItem("forja-idioma", codigo); } catch (e) {}
   }
@@ -61,8 +75,12 @@
       return "<div class='casilla'><b>" + String(p[0]).padStart(2, "0") + "</b><span>" + p[1] + "</span></div>";
     }).join("");
     if (fin) {
-      var f = new Date(LIM);
-      fin.textContent = t("terminaEl", "Termina el") + " " + f.toLocaleDateString(actual === "es" ? "es-MX" : actual, { day: "numeric", month: "long", year: "numeric" });
+      // La fecha es la misma para todos: el cierre ocurre en horario de México
+      var opc = { day: "numeric", month: "long", year: "numeric", timeZone: "America/Mexico_City" };
+      var texto;
+      try { texto = new Date(LIM).toLocaleDateString(actual === "es" ? "es-MX" : actual, opc); }
+      catch (e) { texto = new Date(LIM).toLocaleDateString("es-MX", opc); }
+      fin.textContent = t("terminaEl", "Termina el") + " " + texto;
     }
     if (relojCorto) relojCorto.textContent = d + t("dAbrev", "d") + " " + String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(g).padStart(2, "0");
   }
